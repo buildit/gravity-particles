@@ -1,0 +1,8 @@
+{
+  "color": {
+    "ui": {
+      "fg" : { "value": "{color.brand.neutral.charcoal.value}" },
+      "bg": { "value": "{color.brand.neutral.dirty-snow-white.value}" }
+    }
+  }
+}

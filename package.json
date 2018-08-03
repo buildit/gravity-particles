@@ -1,0 +1,27 @@
+{
+  "name": "gravity-particles",
+  "version": "0.1.0",
+  "description": "Design token data and common assets used by other Gravity libraries and tools.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:tokens",
+    "build:tokens": "node build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "design",
+    "tokens",
+    "assets",
+    "icons",
+    "logos",
+    "buildit",
+    "gravity",
+    "design",
+    "system"
+  ],
+  "author": "Buildit @ Wipro Digital",
+  "license": "MIT",
+  "devDependencies": {
+    "style-dictionary": "^2.2.1"
+  }
+}

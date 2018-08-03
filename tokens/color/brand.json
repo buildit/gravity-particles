@@ -1,0 +1,27 @@
+{
+  "color": {
+    "brand": {
+      "primary": {
+        "dark-choco" : { "value": "#571500" },
+        "acorn": { "value": "#ad3c00" },
+        "satsuma" : { "value": "#ff7913" },
+        "murican-cheese": { "value": "#ffbc58" },
+        "eggshell"  : { "value": "#ffe7c2" }
+      },
+      "secondary": {
+        "twilight" : { "value": "#012b3d" },
+        "deep-ocean": { "value": "#095771" },
+        "tealy-mc-tealface" : { "value": "#287a95" },
+        "bread-mould": { "value": "#5ea1b8" },
+        "nuclear-winter"  : { "value": "#d5e9f0" }
+      },
+      "neutral": {
+        "charcoal" : { "value": "#241c1c" },
+        "asphalt": { "value": "#544848" },
+        "warm-grey" : { "value": "#8b8080" },
+        "ashtray": { "value": "#c0bbbb" },
+        "dirty-snow-white"  : { "value": "#f7f5f5" }
+      }
+    }
+  }
+}

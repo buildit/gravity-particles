@@ -1,0 +1,18 @@
+{
+  "source": [
+    "tokens/**/*.json"
+  ],
+  "platforms": {
+    "scss": {
+      "transformGroup": "gravity-scss",
+      "buildPath": "dist/scss/",
+      "prefix": "grav",
+      "files": [
+        {
+          "destination": "_buildit-colors.scss",
+          "format": "scss/variables"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+
+{% for name, scheme in dictionary.properties.colorScheme %}
+{%- if loop.first %}
+export interface GravityColorScheme {
+  groupA: {
+  {%- for colorName, colorProp in scheme.groupA %}
+    {{colorName}}: string;
+  {%- endfor %}
+  };
+
+  groupB: {
+  {%- for colorName, colorProp in scheme.groupB %}
+    {{colorName}}: string;
+  {%- endfor %}
+  };
+};
+
+{% endif -%}
+
+export const gravColorScheme{{ name | title }}: GravityColorScheme = {
+  groupA: {
+  {%- for colorName, colorProp in scheme.groupA %}
+    {{colorName}}: '{{colorProp.value}}',
+  {%- endfor %}
+  },
+
+  groupB: {
+  {%- for colorName, colorProp in scheme.groupB %}
+    {{colorName}}: '{{colorProp.value}}',
+  {%- endfor %}
+  }
+};
+
+{% endfor %}

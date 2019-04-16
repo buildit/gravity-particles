@@ -1,12 +1,16 @@
 {
-  "name": "gravity-particles",
+  "name": "@buildit/gravity-particles",
   "version": "0.1.0",
   "description": "Design token data and common assets used by other Gravity libraries and tools.",
-  "main": "index.js",
+  "main": "dist/js/index.js",
   "scripts": {
-    "build": "npm run build:tokens",
-    "build:tokens": "node build.js",
+    "build": "gulp",
+    "clean": "gulp clean",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buildit/gravity-particles.git"
   },
   "keywords": [
     "design",
@@ -19,9 +23,23 @@
     "design",
     "system"
   ],
-  "author": "Buildit @ Wipro Digital",
+  "author": {
+    "name": "Buildit",
+    "url": "http://buildit.wiprodigital.com/"
+  },
+  "contributors": [
+    "James Nash (http://cirrus.twiddles.com/)"
+  ],
+  "bugs": {
+    "url": "https://github.com/buildit/gravity-particles/issues"
+  },
+  "homepage": "https://github.com/buildit/gravity-particles#readme",
   "license": "MIT",
   "devDependencies": {
-    "style-dictionary": "^2.2.1"
+    "del": "^4.1.0",
+    "gulp": "^4.0.0",
+    "lodash.kebabcase": "^4.1.1",
+    "nunjucks": "^3.2.0",
+    "style-dictionary": "^2.7.0"
   }
 }

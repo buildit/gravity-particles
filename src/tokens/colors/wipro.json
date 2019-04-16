@@ -1,0 +1,74 @@
+{
+  "color": {
+    "wipro": {
+      "cyan": {
+        "100":  { "value": "#0089cf" },
+        "80":   { "value": "#1099d6" },
+        "60" :  { "value": "#5bacdf" },
+        "40":   { "value": "#93c2e9" },
+        "20":   { "value": "#c7ddf3" },
+        "7":    { "value": "#e7f2fb" }
+      },
+      "blue": {
+        "100":  { "value": "#034ea2" },
+        "80":   { "value": "#4665af" },
+        "60" :  { "value": "#7080bf" },
+        "40":   { "value": "#99a0d1" },
+        "20":   { "value": "#c7cbe5" },
+        "7":    { "value": "#e9ebf6" }
+      },
+      "violet": {
+        "100":  { "value": "#6f2c91" },
+        "80":   { "value": "#8552a1" },
+        "60" :  { "value": "#9c76b4" },
+        "40":   { "value": "#b69cca" },
+        "20":   { "value": "#d6c9e3" },
+        "7":    { "value": "#eeebf5" }
+      },
+      "red": {
+        "100":  { "value": "#eb1c24" },
+        "80":   { "value": "#f15b46" },
+        "60" :  { "value": "#f58468" },
+        "40":   { "value": "#f9ac90" },
+        "20":   { "value": "#fdd4c2" },
+        "7":    { "value": "#feeee7" }
+      },
+      "yellow": {
+        "100":  { "value": "#fdb913" },
+        "80":   { "value": "#ffc54e" },
+        "60" :  { "value": "#ffd27c" },
+        "40":   { "value": "#ffdfa4" },
+        "20":   { "value": "#ffedce" },
+        "7":    { "value": "#fff7eb" }
+      },
+      "green": {
+        "100":  { "value": "#a5cf4c" },
+        "80":   { "value": "#b6d772" },
+        "60" :  { "value": "#c7df94" },
+        "40":   { "value": "#d9e9b5" },
+        "20":   { "value": "#eaf3d8" },
+        "7":    { "value": "#f8fbf0" }
+      },
+      "teal": {
+        "100":  { "value": "#00b49d" },
+        "80":   { "value": "#50c0ad" },
+        "60" :  { "value": "#82cdbf" },
+        "40":   { "value": "#acdcd2" },
+        "20":   { "value": "#b9e1d6" },
+        "7":    { "value": "#edf7f5" }
+      },
+      "gray": {
+        "dark":   { "value": "#4d4848" },
+        "light":  { "value": "#e6e6e6" },
+        "white":  { "value": "#fff" }
+      },
+      "reserved": {
+        "navyBlue":    { "value": "#002d72" },
+        "appleGreen":  { "value": "#6cc24a" },
+        "sunnyYellow": { "value": "#f3d54e" },
+        "rubyRed":     { "value": "#ef3340" },
+        "skyBlue":     { "value": "#009cde" }
+      }
+    }
+  }
+}

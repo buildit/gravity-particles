@@ -1,6 +1,6 @@
 # Exclude build Output
 dist/
-
+.tmp/
 
 ######### App / OS-specific guff ##########
 

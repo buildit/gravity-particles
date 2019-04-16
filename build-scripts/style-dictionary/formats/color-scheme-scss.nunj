@@ -1,0 +1,19 @@
+{% macro renderColorProperty(colorName, colorProp) -%}
+'{{colorProp.attributes.subitem}}': {{colorProp.value}},
+{%- endmacro %}
+
+{% for name, scheme in dictionary.properties.colorScheme %}
+$grav-co-scheme-{{ name }}: (
+  'group-a': (
+  {%- for colorName, colorProp in scheme.groupA %}
+    {{ renderColorProperty(colorName, colorProp) -}}
+  {% endfor %}
+  ),
+
+  'group-b': (
+  {%- for colorName, colorProp in scheme.groupB %}
+    {{ renderColorProperty(colorName, colorProp) -}}
+  {% endfor %}
+  )
+);
+{% endfor %}

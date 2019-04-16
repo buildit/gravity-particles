@@ -1,25 +1,70 @@
 # Buildit Gravity Particles
-
 This is the "single source of truth" for design tokens and assets used throughout Buildit's Gravity design system.
 
 
-## Intro
+## Consuming exported design tokens (via NPM)
+Exports of the design tokens in various formats are published as an NPM package: `@buildit/gravity-particles`.
 
-This project is still a work in progress. We are using [Amazon's Style Dictionary](https://amzn.github.io/style-dictionary/) to export our design tokens into various formats. Currently, it is only configured to export them as SASS variables (so that they can then be consumed by the  [`gravity-ui-sass`](https://github.com/buildit/gravity-ui-sass) library). However, in future we intend to also export them as JS modules, Adobe swatch files, Mac OS X swatch files and whatever else we might need.
+### Setup
+Add the NPM package as a dependency (or dev dependency) to your project:
+```
+npm install --save @buildit/gravity-particles
+```
+
+### Usage: JavaScript / TypeScript
+The design tokens can be consumed in JavaScript (Node.js) applications. TypeScript type declarations are also published.
+
+In your code, you can `require` and use the tokens like so:
+
+```js
+const gravityParticles = require('@buildit/gravity-particles');
+```
 
 
-## Setup
+### Usage: SASS
+The design tokens are also published as SASS variables.
 
+We recommend using [Eyeglass SASS](https://github.com/linkedin/eyeglass) to simplify importing this library into your SASS code. Follow Eyeglass's instructions to integrate it with your SASS compilation options.
+
+Once setup, you can `@import` them into your SASS code like so:
+
+```scss
+@import 'gravity-particles';
+```
+
+
+## Development
+
+### Setup
 1. Clone this repo to your machine
 1. Run `npm install` to install the dependencies
 
 Congrats, you're all set!
 
+**TIP:** We recommend using [NVM](https://github.com/creationix/nvm) to ensure you have a compatible Node.js version (>= 8.11.1).
 
-## Build
 
-```sh
+### Build
+To do a build, which exports the tokens in all the supported formats, run:
+
+```
 npm run build
 ```
 
-This will create a `dist/` directory containing the exported tokens.
+This will create a `dist/` directory containing the exported tokens. (It will also create a `.tmp/` directory for intermediate build files)
+
+
+### Clean
+To remove any previous build output run:
+
+```
+npm run clean
+```
+
+
+### How it works
+The design tokens are expressed in JSON files under `src/tokens/`. We use Amazon's [Style Dictionary](https://amzn.github.io/style-dictionary/) to export them in various formats.
+
+The configuration, along with some Style Dictionary customisations, are kept under `build-scripts/`.
+
+Finally, we use [Gulp](https://gulpjs.com/) as our task runner to run Style Dictionary and perform other operations needed for the build.

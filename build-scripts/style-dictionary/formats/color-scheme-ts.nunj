@@ -1,0 +1,57 @@
+
+{% for name, scheme in dictionary.properties.colorScheme %}
+{%- if loop.first %}
+/**
+  Gravity UI color scheme.
+*/
+export interface GravityColorScheme {
+  /**
+    Set of "group A" colors.
+
+    Any of these colors may be paired with any of the "group B" colors, whenever
+    a perceivable contrast ratio between the two is needed.
+  */
+  groupA: {
+  {%- for colorName, colorProp in scheme.groupA %}
+
+    /**
+      {{colorProp.comment | safe }}
+    */
+    {{colorName}}: string;
+  {%- endfor %}
+  };
+
+  /**
+    Set of "group B" colors.
+
+    Any of these colors may be paired with any of the "group A" colors, whenever
+    a perceivable contrast ratio between the two is needed.
+  */
+  groupB: {
+  {%- for colorName, colorProp in scheme.groupB %}
+
+    /**
+      {{colorProp.comment | safe }}
+    */
+    {{colorName}}: string;
+  {%- endfor %}
+  };
+};
+
+{% endif -%}
+
+export const gravColorScheme{{ name | title }}: GravityColorScheme = {
+  groupA: {
+  {%- for colorName, colorProp in scheme.groupA %}
+    {{colorName}}: '{{colorProp.value}}',
+  {%- endfor %}
+  },
+
+  groupB: {
+  {%- for colorName, colorProp in scheme.groupB %}
+    {{colorName}}: '{{colorProp.value}}',
+  {%- endfor %}
+  }
+};
+
+{% endfor %}

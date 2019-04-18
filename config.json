@@ -13,6 +13,18 @@
           "format": "scss/variables"
         }
       ]
+    },
+    
+    "css": {
+      "transformGroup": "gravity-css",
+      "buildPath": "dist/css/",
+      "prefix": "--grav",
+      "files": [
+        {
+          "destination": "_buildit-colors.css",
+          "format": "scss/variables"
+        }
+      ]
     }
   }
 }

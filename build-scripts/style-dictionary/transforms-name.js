@@ -55,5 +55,47 @@ module.exports = {
 
       return kebabCase([prefix, category].concat(propPathRemainder).join(' '));
     }
+  },
+  
+  gravityCssVar: {
+    name: "name/gravity/css-var",
+    type: "name",
+    transformer: function(prop, {prefix = '--grav'} = {}) {
+      const propPathRemainder = prop.path.slice(2);
+
+      let category;
+      switch (prop.attributes.category) {
+        case 'color': {
+          category = 'co';
+          break;
+        }
+
+        case 'colorScheme': {
+          category = 'co-scheme';
+          break;
+        }
+
+        case 'space': {
+          category = 'sp';
+          break;
+        }
+
+        case 'stroke': {
+          category = 'st';
+          break;
+        }
+
+        case 'transform': {
+          category = 'tr';
+          break;
+        }
+
+        default: {
+          category = prop.attributes.category;
+        }
+      }
+
+      return kebabCase([prefix, category].concat(propPathRemainder).join(' '));
+    }
   }
 };

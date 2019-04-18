@@ -17,15 +17,21 @@ module.exports = require('style-dictionary')
   .registerFilter(sdFilters.isColor)
   .registerFilter(sdFilters.isColorScheme)
   .registerTransform(sdNameTransforms.gravitySassVar)
+  .registerTransform(sdNameTransforms.gravityCssVar)
   .registerTransformGroup({
     name: 'gravity-scss',
     transforms: ['attribute/cti', sdNameTransforms.gravitySassVar.name, 'color/css']
+  })
+  .registerTransformGroup({
+    name: 'gravity-css',
+    transforms: ['attribute/cti', sdNameTransforms.gravityCssVar.name, 'color/css']
   })
   .registerTransformGroup({
     name: 'gravity-ts',
     transforms: ['attribute/cti', 'name/cti/camel', 'color/css']
   })
   .registerFormat(sdFormats.colorSchemeScss)
+  .registerFormat(sdFormats.colorSchemeCss)
   .registerFormat(sdFormats.colorSchemeTs)
   .extend({
     source: [
@@ -46,6 +52,24 @@ module.exports = require('style-dictionary')
             filter: 'isColorScheme',
             destination: 'color-schemes.scss',
             format: sdFormats.colorSchemeScss.name
+          }
+        ]
+      },
+      
+      // CSS output
+      css: {
+        transformGroup: 'gravity-css',
+        buildPath: `${bldApi.distPath('css')}${path.sep}`,
+        files: [
+          {
+            filter: 'isColor',
+            destination: 'colors.css',
+            format: 'css/variables'
+          },
+          {
+            filter: 'isColorScheme',
+            destination: 'color-schemes.css',
+            format: sdFormats.colorSchemeCss.name
           }
         ]
       },

@@ -17,6 +17,16 @@ module.exports = {
       });
     }
   },
+  
+  colorSchemeCss: {
+    name: 'css/color-scheme',
+    formatter: (dictionary, config) => {
+      return nunjucks.render(path.resolve(__dirname, 'formats/color-scheme-css.nunj'), {
+        dictionary,
+        config
+      });
+    }
+  },
 
   colorSchemeTs: {
     name: 'ts/color-scheme',

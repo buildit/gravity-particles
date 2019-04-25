@@ -25,7 +25,9 @@ module.exports = require('style-dictionary')
     name: 'gravity-ts',
     transforms: ['attribute/cti', 'name/cti/camel', 'color/css']
   })
+  .registerFormat(sdFormats.colorsScss)
   .registerFormat(sdFormats.colorSchemeScss)
+  .registerFormat(sdFormats.colorsTs)
   .registerFormat(sdFormats.colorSchemeTs)
   .extend({
     source: [
@@ -40,7 +42,7 @@ module.exports = require('style-dictionary')
           {
             filter: 'isColor',
             destination: 'colors.scss',
-            format: 'scss/variables'
+            format: sdFormats.colorsScss.name
           },
           {
             filter: 'isColorScheme',
@@ -58,7 +60,7 @@ module.exports = require('style-dictionary')
           {
             filter: 'isColor',
             destination: 'colors.ts',
-            format: 'javascript/es6'
+            format: sdFormats.colorsTs.name
           },
           {
             filter: 'isColorScheme',

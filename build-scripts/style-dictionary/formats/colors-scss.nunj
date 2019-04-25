@@ -1,0 +1,17 @@
+{% macro renderColorProperty(colorName, colorProp) -%}
+'{{colorProp.attributes.subitem | kebab}}': {{colorProp.value}},
+{%- endmacro %}
+
+$grav-co-all: (
+{%- for brand, group in dictionary.properties.color %}
+  '{{ brand | kebab }}': (
+  {%- for palette, colors in group %}
+    '{{ palette| kebab }}': (
+    {%- for colorName, colorProp in colors %}
+      {{ renderColorProperty(colorName, colorProp) | safe }}
+    {% endfor -%}
+    ),
+  {% endfor -%}
+  ),
+{% endfor -%}
+);

@@ -1,0 +1,17 @@
+{% macro renderColorProperty(colorName, colorProp) -%}
+'{{colorProp.attributes.subitem | camel }}': "{{colorProp.value}}",
+{%- endmacro %}
+
+export const colors = {
+{%- for brand, group in dictionary.properties.color %}
+  '{{ brand | camel }}': {
+  {%- for palette, colors in group %}
+    '{{ palette | camel }}': {
+    {%- for colorName, colorProp in colors %}
+      {{ renderColorProperty(colorName, colorProp) | safe }}
+    {% endfor -%}
+    },
+  {% endfor -%}
+  },
+{% endfor -%}
+};

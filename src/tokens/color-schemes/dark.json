@@ -65,15 +65,15 @@
           "comment":  "{colorScheme.light.groupB.accent.comment}"
         },
         "accentSuccess":    {
-          "value":    "{color.wipro.gray.white.value}",
+          "value":    "{color.wipro.green.20.value}",
           "comment":  "{colorScheme.light.groupB.accentSuccess.comment}"
         },
         "accentAttention":  {
-          "value":    "{color.wipro.gray.white.value}",
+          "value":    "{color.wipro.yellow.40.value}",
           "comment":  "{colorScheme.light.groupB.accentAttention.comment}"
         },
         "accentDanger":     {
-          "value":    "{color.wipro.gray.white.value}",
+          "value":    "{color.wipro.red.20.value}",
           "comment":  "{colorScheme.light.groupB.accentDanger.comment}"
         }
       }

@@ -15,15 +15,15 @@
           "comment":  "Accent color for elements that should draw the user's focus."
         },
         "accentSuccess": {
-          "value":    "{color.wipro.gray.white.value}",
+          "value":    "{color.wipro.green.7.value}",
           "comment":  "Accent color for elements that indicate success or completion."
         },
         "accentAttention": {
-          "value":    "{color.wipro.gray.white.value}",
+          "value":    "{color.wipro.yellow.20.value}",
           "comment":  "Accent color for elements that require the user's attention."
         },
         "accentDanger": {
-          "value":    "{color.wipro.gray.white.value}",
+          "value":    "{color.wipro.red.7.value}",
           "comment":  "Accent color for elements that indicate danger or risk."
         }
       },

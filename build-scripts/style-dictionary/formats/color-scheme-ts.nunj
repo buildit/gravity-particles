@@ -38,20 +38,30 @@ export interface GravityColorScheme {
   };
 };
 
-{% endif -%}
+/**
+  A collection of named Gravity UI color schemes.
+*/
+export interface GravityColorSchemes {
+  [name: string]: GravityColorScheme
+}
 
-export const gravColorScheme{{ name | title }}: GravityColorScheme = {
-  groupA: {
-  {%- for colorName, colorProp in scheme.groupA %}
-    {{colorName}}: '{{colorProp.value}}',
-  {%- endfor %}
+export const colorSchemes: GravityColorSchemes = {
+{% endif %}
+
+  {{ name }}: {
+    groupA: {
+    {%- for colorName, colorProp in scheme.groupA %}
+      {{colorName}}: '{{colorProp.value}}',
+    {%- endfor %}
+    },
+
+    groupB: {
+    {%- for colorName, colorProp in scheme.groupB %}
+      {{colorName}}: '{{colorProp.value}}',
+    {%- endfor %}
+    }
   },
-
-  groupB: {
-  {%- for colorName, colorProp in scheme.groupB %}
-    {{colorName}}: '{{colorProp.value}}',
-  {%- endfor %}
-  }
+{% if loop.last %}
 };
-
+{% endif -%}
 {% endfor %}

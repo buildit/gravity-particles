@@ -1,19 +1,22 @@
 {% macro renderColorProperty(colorName, colorProp) -%}
-'{{colorProp.attributes.subitem}}': {{colorProp.value}},
+'{{colorProp.attributes.subitem | kebab }}': {{colorProp.value}},
 {%- endmacro %}
 
-{% for name, scheme in dictionary.properties.colorScheme %}
-$grav-co-scheme-{{ name }}: (
-  'group-a': (
-  {%- for colorName, colorProp in scheme.groupA %}
-    {{ renderColorProperty(colorName, colorProp) -}}
-  {% endfor %}
-  ),
 
-  'group-b': (
-  {%- for colorName, colorProp in scheme.groupB %}
-    {{ renderColorProperty(colorName, colorProp) -}}
+$grav-co-schemes: (
+  {% for name, scheme in dictionary.properties.colorScheme %}
+  '{{ name }}': (
+    'group-a': (
+    {%- for colorName, colorProp in scheme.groupA %}
+      {{ renderColorProperty(colorName, colorProp) -}}
+    {% endfor %}
+    ),
+
+    'group-b': (
+    {%- for colorName, colorProp in scheme.groupB %}
+      {{ renderColorProperty(colorName, colorProp) -}}
+    {% endfor %}
+    )
+  ),
   {% endfor %}
-  )
 );
-{% endfor %}

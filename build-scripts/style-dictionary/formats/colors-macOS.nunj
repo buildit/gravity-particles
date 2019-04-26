@@ -1,10 +1,8 @@
 {% macro renderColorProperty(colorName, colorProp) -%}
-  { {{colorProp.value | safe }} }
+  @"{{palette| kebab}}{{colorName}}": {{colorProp.value | safe }}
 {%- endmacro %}
-{
-  "compatibleVersion": "1.0",
-  "pluginVersion": "1.1",
-  "colors": [
+NSColorList *list = [NSColorList.alloc initWithName:@"Wipro"];
+[ @{
     {%- for brand, group in dictionary.properties.color %}
       {%- for palette, colors in group %}
         {%- for colorName, colorProp in colors %}
@@ -12,5 +10,6 @@
         {% endfor -%}
       {% endfor -%}
     {% endfor -%}
-  ]
-}
+  enumerateKeysAndObjectsUsingBlock:^(id name, id color, BOOL *s) {
+  [list setColor:color forKey:name];
+  }];

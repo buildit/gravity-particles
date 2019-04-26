@@ -5,6 +5,8 @@
 const path = require('path');
 const bldConsts = require('../build-consts');
 
+const macOsColorsTmpTxtFilename = 'gravity-colors.txt';
+
 // Resolves the given path segments relative to the package root
 function pkgPath(...pathSegements) {
   return path.resolve(__dirname, '..', ...pathSegements);
@@ -16,9 +18,14 @@ function srcPath(...pathSegements) {
   return pkgPath(bldConsts.srcDirname, ...pathSegements);
 }
 
-// Resolves the given path segments relative to the source dir
+// Resolves the given path segments relative to the temp build files dir
 function tmpPath(...pathSegements) {
   return pkgPath('.tmp', ...pathSegements);
+}
+
+// Resolves the given path segments relative to the temp binaries file
+function tmpBinPath(...pathSegements) {
+  return pkgPath('.tmp-bin', ...pathSegements);
 }
 
 module.exports = {
@@ -68,6 +75,35 @@ module.exports = {
    * @return {string} Absolute file path to the specified tmp
    *        directory or file.
    */
-  tmpTsPath: (...pathSegments) => tmpPath('ts', ...pathSegments)
+  tmpTsPath: (...pathSegments) => tmpPath('ts', ...pathSegments),
 
+  /**
+   * Takes a sequence of path segments relative to the temporary macOS
+   * path.
+   *
+   * @param  {...string} pathSegements One or more path segments
+   *        relative to the macOS tmp directory.
+   *
+   * @return {string} Absolute file path to the specified tmp
+   *        directory or file.
+   */
+  tmpMacOsPath: (...pathSegments) => tmpPath('macOS', ...pathSegments),
+
+  /**
+   * Takes a sequence of path segments relative to the temporary
+   * binaries path for helper apps downloaded by the build.
+   *
+   * @param  {...string} pathSegements One or more path segments
+   *        relative to the tmp binary directory.
+   *
+   * @return {string} Absolute file path to the specified tmp
+   *        directory or file.
+   */
+  tmpBinPath,
+
+  /**
+   * The file name of the intermediate colors text file used to
+   * generate macOS .clr files.
+   */
+  macOsColorsTmpTxtFilename,
 };

@@ -30,11 +30,16 @@ module.exports = require('style-dictionary')
     name: 'gravity-sketch',
     transforms: ['attribute/cti', 'name/cti/camel', 'value/gravity/sketch']
   })
+  .registerTransformGroup({
+    name: 'gravity-macOS',
+    transforms: ['attribute/cti', 'name/human', 'color/css']
+  })
   .registerFormat(sdFormats.colorsScss)
   .registerFormat(sdFormats.colorSchemeScss)
   .registerFormat(sdFormats.colorsTs)
   .registerFormat(sdFormats.colorSchemeTs)
   .registerFormat(sdFormats.colorSchemeSketch)
+  .registerFormat(sdFormats.colorSchemeMacOS)
   .extend({
     source: [
       bldPaths.srcTokensPath('**', '*.json')
@@ -88,6 +93,20 @@ module.exports = require('style-dictionary')
           {
             destination: 'gravity.sketchpalette',
             format: sdFormats.colorSchemeSketch.name
+          }
+        ]
+      },
+
+
+      // macOS Color Palette
+      macOS: {
+        transformGroup: 'gravity-macOS',
+        buildPath: `${bldPaths.tmpMacOsPath()}${path.sep}`,
+        files: [
+          {
+            filter: 'isColor',
+            destination: bldPaths.macOsColorsTmpTxtFilename,
+            format: sdFormats.colorSchemeMacOS.name
           }
         ]
       }

@@ -59,5 +59,15 @@ module.exports = {
         config
       });
     }
+  },
+
+  colorSchemeSketch: {
+    name: 'sketch/colors',
+    formatter: (dictionary, config) => {
+      return nunjucksEnv.render(path.resolve(__dirname, 'formats/colors-sketch.nunj'), {
+        dictionary,
+        config
+      });
+    }
   }
 };

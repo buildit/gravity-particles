@@ -1,3 +1,5 @@
+var Color = require('tinycolor2')
+
 /**
  * Custom StyleDictionary name transforms that can be registered via
  * `StyleDictionary.registerTransform()`.
@@ -55,5 +57,19 @@ module.exports = {
 
       return kebabCase([prefix, category].concat(propPathRemainder).join(' '));
     }
+  },
+  gravitySketch: {
+    name: 'value/gravity/sketch',
+    type: 'value',
+    matcher: function(prop) {
+      return prop.attributes.category === 'color';
+    },
+    transformer: function (prop) {
+      const { r, g, b, a } = Color(prop.value).toRgb();
+      const rFixed = (r / 255.0).toFixed(16);
+      const gFixed = (g / 255.0).toFixed(16);
+      const bFixed = (b / 255.0).toFixed(16);
+      return `"red": ${rFixed}, "green": ${gFixed}, "blue": ${bFixed}, "alpha":${a}`;
+    } 
   }
 };

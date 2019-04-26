@@ -69,5 +69,15 @@ module.exports = {
         config
       });
     }
+  },
+
+  colorSchemeMacOS: {
+    name: 'macOS/colors',
+    formatter: (dictionary, config) => {
+      return nunjucksEnv.render(path.resolve(__dirname, 'formats/colors-macOS.nunj'), {
+        dictionary,
+        config
+      });
+    }
   }
 };

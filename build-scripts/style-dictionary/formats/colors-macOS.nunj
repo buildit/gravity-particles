@@ -1,0 +1,16 @@
+{% macro renderColorProperty(colorName, colorProp) -%}
+  { {{colorProp.value | safe }} }
+{%- endmacro %}
+{
+  "compatibleVersion": "1.0",
+  "pluginVersion": "1.1",
+  "colors": [
+    {%- for brand, group in dictionary.properties.color %}
+      {%- for palette, colors in group %}
+        {%- for colorName, colorProp in colors %}
+          {{ renderColorProperty(colorName, colorProp) | safe }}{% if not loop.last %},{% endif %} 
+        {% endfor -%}
+      {% endfor -%}
+    {% endfor -%}
+  ]
+}

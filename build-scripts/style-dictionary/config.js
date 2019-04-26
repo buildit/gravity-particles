@@ -18,6 +18,7 @@ module.exports = require('style-dictionary')
   .registerFilter(sdFilters.isColorScheme)
   .registerTransform(sdNameTransforms.gravitySassVar)
   .registerTransform(sdNameTransforms.gravitySketch)
+  .registerTransform(sdNameTransforms.gravityMacOS)
   .registerTransformGroup({
     name: 'gravity-scss',
     transforms: ['attribute/cti', sdNameTransforms.gravitySassVar.name, 'color/css']
@@ -30,11 +31,16 @@ module.exports = require('style-dictionary')
     name: 'gravity-sketch',
     transforms: ['attribute/cti', 'name/cti/camel', 'value/gravity/sketch']
   })
+  .registerTransformGroup({
+    name: 'gravity-macOS',
+    transforms: ['attribute/cti', 'name/cti/camel', 'value/gravity/macOS']
+  })
   .registerFormat(sdFormats.colorsScss)
   .registerFormat(sdFormats.colorSchemeScss)
   .registerFormat(sdFormats.colorsTs)
   .registerFormat(sdFormats.colorSchemeTs)
   .registerFormat(sdFormats.colorSchemeSketch)
+  .registerFormat(sdFormats.colorSchemeMacOS)
   .extend({
     source: [
       bldPaths.srcTokensPath('**', '*.json')
@@ -88,6 +94,19 @@ module.exports = require('style-dictionary')
           {
             destination: 'gravity.sketchpalette',
             format: sdFormats.colorSchemeSketch.name
+          }
+        ]
+      },
+
+
+      // macOS Color Palette
+      macOS: {
+        transformGroup: 'gravity-macOS',
+        buildPath: `${bldApi.distPath('macOS')}${path.sep}`,
+        files: [
+          {
+            destination: 'wipro.clr',
+            format: sdFormats.colorSchemeMacOS.name
           }
         ]
       }

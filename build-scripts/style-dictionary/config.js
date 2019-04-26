@@ -17,6 +17,7 @@ module.exports = require('style-dictionary')
   .registerFilter(sdFilters.isColor)
   .registerFilter(sdFilters.isColorScheme)
   .registerTransform(sdNameTransforms.gravitySassVar)
+  .registerTransform(sdNameTransforms.gravitySketch)
   .registerTransformGroup({
     name: 'gravity-scss',
     transforms: ['attribute/cti', sdNameTransforms.gravitySassVar.name, 'color/css']
@@ -25,10 +26,15 @@ module.exports = require('style-dictionary')
     name: 'gravity-ts',
     transforms: ['attribute/cti', 'name/cti/camel', 'color/css']
   })
+  .registerTransformGroup({
+    name: 'gravity-sketch',
+    transforms: ['attribute/cti', 'name/cti/camel', 'value/gravity/sketch']
+  })
   .registerFormat(sdFormats.colorsScss)
   .registerFormat(sdFormats.colorSchemeScss)
   .registerFormat(sdFormats.colorsTs)
   .registerFormat(sdFormats.colorSchemeTs)
+  .registerFormat(sdFormats.colorSchemeSketch)
   .extend({
     source: [
       bldPaths.srcTokensPath('**', '*.json')
@@ -66,6 +72,22 @@ module.exports = require('style-dictionary')
             filter: 'isColorScheme',
             destination: 'color-schemes.ts',
             format: sdFormats.colorSchemeTs.name
+          }
+        ]
+      },
+
+      // Sketch
+      sketch: {
+        transformGroup: 'gravity-sketch',
+        buildPath: `${bldApi.distPath('sketch')}${path.sep}`,
+        files: [
+          {
+            destination: 'wipro.sketchpalette',
+            format: sdFormats.colorSchemeSketch.name
+          },
+          {
+            destination: 'gravity.sketchpalette',
+            format: sdFormats.colorSchemeSketch.name
           }
         ]
       }

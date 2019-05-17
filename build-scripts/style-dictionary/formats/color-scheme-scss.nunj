@@ -5,7 +5,7 @@
 
 $grav-co-schemes: (
   {% for name, scheme in dictionary.properties.colorScheme %}
-  '{{ name }}': (
+  '{{ name | kebab }}': (
     'group-a': (
     {%- for colorName, colorProp in scheme.groupA %}
       {{ renderColorProperty(colorName, colorProp) -}}

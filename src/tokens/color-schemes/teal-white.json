@@ -7,7 +7,7 @@
           "comment":  "Base neutral color. (Note: Color schemes automatically apply this as the container's background color.)"
         },
         "neutralAlt": {
-          "value":    "{color.extended.gray.very-light.value}",
+          "value":    "{color.wipro-extended.gray.very-light.value}",
           "comment":  "Alternative neutral color to be used for subtle, NON-ESSENTIAL, effects."
         },
         "accent": {
@@ -33,11 +33,11 @@
           "comment":  "Base neutral color. (Note: Color schemes automatically apply this as the container's foreground color.)"
         },
         "neutralSubtle": {
-          "value":    "{color.extended.gray.medium-dark.value}",
+          "value":    "{color.wipro-extended.gray.medium-dark.value}",
           "comment":  "Alternative neutral color to be used for non-interactive items that need to visually stand out less against their surroundings."
         },
         "neutralEmphasis": {
-          "value":    "{color.extended.gray.darker.value}",
+          "value":    "{color.wipro-extended.gray.darker.value}",
           "comment":  "Alternative neutral color to be used for non-interactive items that need to visually stand out more against their surroundings."
         },
         "control": {
@@ -49,19 +49,19 @@
           "comment":  "Color intended for an alternative state or type of interactive control. For example, a visited link."
         },
         "controlEmphasis": {
-          "value":    "{color.extended.teal.shade-80.value}",
+          "value":    "{color.wipro-extended.teal.shade-80.value}",
           "comment":  "Color intended for states of interactive controls that need to be visually emphasised somehow. Typically this will be used for hover and/or focus states."
         },
         "controlActive": {
-          "value":    "{color.extended.teal.shade-60.value}",
+          "value":    "{color.wipro-extended.teal.shade-60.value}",
           "comment":  "Color intended for the active state of interactive controls."
         },
         "controlDisabled": {
-          "value":    "{color.extended.gray.medium-dark.value}",
+          "value":    "{color.wipro-extended.gray.medium-dark.value}",
           "comment":  "Color intended for the disbaled state of interactive controls."
         },
         "accent": {
-          "value":    "{color.extended.teal.shade-80.value}",
+          "value":    "{color.wipro-extended.teal.shade-80.value}",
           "comment":  "Accent color for elements that should draw the user's focus."
         },
         "accentSuccess": {

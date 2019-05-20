@@ -7,7 +7,7 @@
           "comment":  "{colorScheme.tealWhite.groupA.neutral.comment}"
         },
         "neutralAlt":       {
-          "value":    "{color.extended.gray.darker.value}",
+          "value":    "{color.wipro-extended.gray.darker.value}",
           "comment":  "{colorScheme.tealWhite.groupA.neutralAlt.comment}"
         },
         "accent":           {
@@ -33,7 +33,7 @@
           "comment":  "{colorScheme.tealWhite.groupB.neutral.comment}"
         },
         "neutralSubtle":    {
-          "value":    "{color.extended.gray.medium-light.value}",
+          "value":    "{color.wipro-extended.gray.medium-light.value}",
           "comment":  "{colorScheme.tealWhite.groupB.neutralSubtle.comment}"
         },
         "neutralEmphasis":  {
@@ -57,7 +57,7 @@
           "comment":  "{colorScheme.tealWhite.groupB.controlActive.comment}"
         },
         "controlDisabled":  {
-          "value":    "{color.extended.gray.medium.value}",
+          "value":    "{color.wipro-extended.gray.medium.value}",
           "comment":  "{colorScheme.tealWhite.groupB.controlDisabled.comment}"
         },
         "accent":           {

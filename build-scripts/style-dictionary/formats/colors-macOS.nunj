@@ -1,15 +1,11 @@
-{% macro renderColorProperty(colorName, colorProp) -%}
-  @"{{palette| kebab}}{{colorName}}": {{colorProp.value | safe }}
-{%- endmacro %}
-NSColorList *list = [NSColorList.alloc initWithName:@"Wipro"];
-[ @{
-    {%- for brand, group in dictionary.properties.color %}
-      {%- for palette, colors in group %}
-        {%- for colorName, colorProp in colors %}
-          {{ renderColorProperty(colorName, colorProp) | safe }}{% if not loop.last %},{% endif %} 
-        {% endfor -%}
-      {% endfor -%}
-    {% endfor -%}
-  enumerateKeysAndObjectsUsingBlock:^(id name, id color, BOOL *s) {
-  [list setColor:color forKey:name];
-  }];
+{% macro renderColorProperty(brand, palette, colorName, colorProp) -%}
+  {{colorProp.value | safe }} {{palette | start}}{% if colorName != 'base' %} - {{colorName | start}}{% endif %}
+{%- endmacro -%}
+
+{%- for brand, group in dictionary.properties.color -%}
+  {%- for palette, colors in group -%}
+    {%- for colorName, colorProp in colors %}
+{{ renderColorProperty(brand, palette, colorName, colorProp) | safe }}
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endfor %}

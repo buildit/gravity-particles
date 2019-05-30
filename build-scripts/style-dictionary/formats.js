@@ -7,6 +7,7 @@ const path = require('path');
 const nunjucks = require('nunjucks');
 const kebabCase = require('lodash.kebabcase');
 const camelCase = require('lodash.camelcase');
+const startCase = require('lodash.startcase');
 
 const nunjucksEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader());
 
@@ -18,6 +19,11 @@ nunjucksEnv.addFilter(
 nunjucksEnv.addFilter(
   'camel',
   str => camelCase(str)
+);
+
+nunjucksEnv.addFilter(
+  'start',
+  str => startCase(str)
 );
 
 module.exports = {

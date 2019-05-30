@@ -61,6 +61,8 @@ To remove any previous build output run:
 npm run clean
 ```
 
+When running on macOS, the build process will download some [additional tools](https://github.com/ramonpoca/ColorTools) on the first build and place them under `.tmp-bin/`. If you wish, you can remove those (e.g. to force a fresh download on the next build) by running: `npm run clean-bin`.
+
 
 ### How it works
 The design tokens are expressed in JSON files under `src/tokens/`. We use Amazon's [Style Dictionary](https://amzn.github.io/style-dictionary/) to export them in various formats.

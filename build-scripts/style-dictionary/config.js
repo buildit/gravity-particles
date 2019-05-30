@@ -33,7 +33,7 @@ module.exports = require('style-dictionary')
   })
   .registerTransformGroup({
     name: 'gravity-macOS',
-    transforms: ['attribute/cti', 'name/cti/camel', 'value/gravity/macOS']
+    transforms: ['attribute/cti', 'name/human', 'value/gravity/macOS']
   })
   .registerFormat(sdFormats.colorsScss)
   .registerFormat(sdFormats.colorSchemeScss)
@@ -102,10 +102,11 @@ module.exports = require('style-dictionary')
       // macOS Color Palette
       macOS: {
         transformGroup: 'gravity-macOS',
-        buildPath: `${bldApi.distPath('macOS')}${path.sep}`,
+        buildPath: `${bldPaths.tmpMacOsPath()}${path.sep}`,
         files: [
           {
-            destination: 'wipro.clr',
+            filter: 'isColor',
+            destination: 'gravity-colors.m',
             format: sdFormats.colorSchemeMacOS.name
           }
         ]

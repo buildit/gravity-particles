@@ -48,6 +48,7 @@
     "gulp-typescript": "^5.0.1",
     "lodash.camelcase": "^4.3.0",
     "lodash.kebabcase": "^4.1.1",
+    "lodash.startcase": "^4.4.0",
     "nunjucks": "^3.2.0",
     "style-dictionary": "^2.7.0",
     "typescript": "^3.4.3"

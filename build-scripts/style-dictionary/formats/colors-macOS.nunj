@@ -1,15 +1,20 @@
-{% macro renderColorProperty(colorName, colorProp) -%}
-  @"{{palette| kebab}}{{colorName}}": {{colorProp.value | safe }}
+// This template is WIP!
+// Need to add some top and tail stuff so that this can be compiled into a macOS
+// executable that outputs a .clr file.
+
+{% macro renderColorProperty(brand, palette, colorName, colorProp) -%}
+  @"{{palette | start}}{% if colorName != 'base' %} ({{colorName | start}}){% endif %}": {{colorProp.value | safe }}
 {%- endmacro %}
-NSColorList *list = [NSColorList.alloc initWithName:@"Wipro"];
+NSColorList *list = [NSColorList.alloc initWithName:@"Gravity"];
 [ @{
-    {%- for brand, group in dictionary.properties.color %}
-      {%- for palette, colors in group %}
+    {%- for brand, group in dictionary.properties.color -%}
+      {%- for palette, colors in group -%}
         {%- for colorName, colorProp in colors %}
-          {{ renderColorProperty(colorName, colorProp) | safe }}{% if not loop.last %},{% endif %} 
-        {% endfor -%}
-      {% endfor -%}
-    {% endfor -%}
+          {{ renderColorProperty(brand, palette, colorName, colorProp) | safe }}{% if not loop.last %},{% endif %}
+        {%- endfor -%}{% if not loop.last %},{% endif %}
+      {%- endfor -%}{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  }
   enumerateKeysAndObjectsUsingBlock:^(id name, id color, BOOL *s) {
   [list setColor:color forKey:name];
-  }];
+}];

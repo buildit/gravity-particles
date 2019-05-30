@@ -1,4 +1,4 @@
-var Color = require('tinycolor2')
+var Color = require('tinycolor2');
 
 /**
  * Custom StyleDictionary name transforms that can be registered via
@@ -70,7 +70,7 @@ module.exports = {
       const gFixed = (g / 255.0).toFixed(16);
       const bFixed = (b / 255.0).toFixed(16);
       return `"red": ${rFixed}, "green": ${gFixed}, "blue": ${bFixed}, "alpha":${a}`;
-    } 
+    }
   },
   gravityMacOS: {
     name: 'value/gravity/macOS',

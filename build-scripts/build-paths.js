@@ -68,6 +68,18 @@ module.exports = {
    * @return {string} Absolute file path to the specified tmp
    *        directory or file.
    */
-  tmpTsPath: (...pathSegments) => tmpPath('ts', ...pathSegments)
+  tmpTsPath: (...pathSegments) => tmpPath('ts', ...pathSegments),
+
+  /**
+   * Takes a sequence of path segments relative to the temporary macOS
+   * path.
+   *
+   * @param  {...string} pathSegements One or more path segments
+   *        relative to the macOS tmp directory.
+   *
+   * @return {string} Absolute file path to the specified tmp
+   *        directory or file.
+   */
+  tmpMacOsPath: (...pathSegments) => tmpPath('macOS', ...pathSegments),
 
 };

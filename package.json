@@ -1,6 +1,6 @@
 {
   "name": "@buildit/gravity-particles",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Design token data and common assets used by other Gravity libraries and tools.",
   "main": "dist/js/index.js",
   "types": "dist/js/index.d.ts",
@@ -32,7 +32,7 @@
   ],
   "author": {
     "name": "Buildit",
-    "url": "http://buildit.wiprodigital.com/"
+    "url": "https://buildit.wiprodigital.com/"
   },
   "contributors": [
     "James Nash (http://cirrus.twiddles.com/)"

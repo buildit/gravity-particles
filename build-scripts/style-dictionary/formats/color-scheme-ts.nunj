@@ -17,7 +17,7 @@ export interface GravityColorScheme {
     /**
       {{colorProp.comment | safe }}
     */
-    {{colorName}}: string;
+    {{colorName | camel}}: string;
   {%- endfor %}
   };
 
@@ -33,7 +33,7 @@ export interface GravityColorScheme {
     /**
       {{colorProp.comment | safe }}
     */
-    {{colorName}}: string;
+    {{colorName | camel}}: string;
   {%- endfor %}
   };
 };
@@ -48,16 +48,16 @@ export interface GravityColorSchemes {
 export const colorSchemes: GravityColorSchemes = {
 {% endif %}
 
-  {{ name }}: {
+  {{ name | camel}}: {
     groupA: {
     {%- for colorName, colorProp in scheme.groupA %}
-      {{colorName}}: '{{colorProp.value}}',
+      {{colorName | camel}}: '{{colorProp.value}}',
     {%- endfor %}
     },
 
     groupB: {
     {%- for colorName, colorProp in scheme.groupB %}
-      {{colorName}}: '{{colorProp.value}}',
+      {{colorName | camel}}: '{{colorProp.value}}',
     {%- endfor %}
     }
   },

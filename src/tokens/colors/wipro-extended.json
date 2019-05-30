@@ -1,0 +1,64 @@
+{
+  "color": {
+    "wipro-extended": {
+      "cyan": {
+        "shade-80":   { "value": "#006ea6" },
+        "shade-60" :  { "value": "#00527c" },
+        "shade-40":   { "value": "#003753" },
+        "shade-20":   { "value": "#001b29" },
+        "shade-7":    { "value": "#000a0e" }
+      },
+      "blue": {
+        "shade-80":   { "value": "#023e82" },
+        "shade-60" :  { "value": "#022f61" },
+        "shade-40":   { "value": "#011f41" },
+        "shade-20":   { "value": "#011020" },
+        "shade-7":    { "value": "#00050b" }
+      },
+      "violet": {
+        "shade-80":   { "value": "#592374" },
+        "shade-60" :  { "value": "#431a57" },
+        "shade-40":   { "value": "#2c123a" },
+        "shade-20":   { "value": "#16091d" },
+        "shade-7":    { "value": "#08030a" }
+      },
+      "red": {
+        "shade-80":   { "value": "#bc161d" },
+        "shade-60" :  { "value": "#8d1116" },
+        "shade-40":   { "value": "#5e0b0e" },
+        "shade-20":   { "value": "#2f0607" },
+        "shade-7":    { "value": "#100203" }
+      },
+      "yellow": {
+        "shade-80":   { "value": "#ca940f" },
+        "shade-60" :  { "value": "#986f0b" },
+        "shade-40":   { "value": "#654a08" },
+        "shade-20":   { "value": "#332504" },
+        "shade-7":    { "value": "#120d01" }
+      },
+      "green": {
+        "shade-80":   { "value": "#84a63d" },
+        "shade-60" :  { "value": "#637c2e" },
+        "shade-40":   { "value": "#42531e" },
+        "shade-20":   { "value": "#21290f" },
+        "shade-7":    { "value": "#0c0e05" }
+      },
+      "teal": {
+        "shade-80":   { "value": "#008D7C" },
+        "shade-60" :  { "value": "#006c5e" },
+        "shade-40":   { "value": "#00483f" },
+        "shade-20":   { "value": "#00241f" },
+        "shade-7":    { "value": "#000d0b" }
+      },
+      "gray": {
+        "black":        { "value": "#000000" },
+        "very-dark":    { "value": "#161616" },
+        "darker":       { "value": "#3d3a3a" },
+        "medium-dark":  { "value": "#7d7d7d" },
+        "medium":       { "value": "#969696" },
+        "medium-light": { "value": "#C9C9C9" },
+        "very-light":   { "value": "#f1f1f1" }
+      }
+    }
+  }
+}

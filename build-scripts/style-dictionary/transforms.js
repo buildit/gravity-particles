@@ -1,10 +1,10 @@
-var Color = require('tinycolor2');
-
 /**
  * Custom StyleDictionary name transforms that can be registered via
  * `StyleDictionary.registerTransform()`.
  */
+const Color = require('tinycolor2');
 const kebabCase = require('lodash.kebabcase');
+const startCase = require('lodash.startcase');
 
 module.exports = {
   /**
@@ -17,7 +17,7 @@ module.exports = {
    * it will be swapped for that prefix. The type, item and any remaining path segments will be appended in
    * kebab-case style.
    */
-  gravitySassVar: {
+  gravitySassVarName: {
     name: "name/gravity/sass-var",
     type: "name",
     transformer: function(prop, {prefix = 'grav'} = {}) {
@@ -58,8 +58,29 @@ module.exports = {
       return kebabCase([prefix, category].concat(propPathRemainder).join(' '));
     }
   },
-  gravitySketch: {
-    name: 'value/gravity/sketch',
+
+  /**
+   * Transforms a color properties name into a human-friendly format suitable
+   * for display.
+   */
+  gravityHumanColorName: {
+    name: "name/gravity/human-color-name",
+    type: "name",
+    matcher: function(prop) {
+      return prop.attributes.category === 'color';
+    },
+    transformer: function(prop, config) {
+      const colorName = startCase(prop.attributes.item);
+      let tintOrSwatchName = '';
+      if (prop.attributes.subitem !== 'base') {
+        tintOrSwatchName = ` - ${startCase(prop.attributes.subitem)}`;
+      }
+      return `${colorName}${tintOrSwatchName}`;
+    }
+  },
+
+  gravitySketchColor: {
+    name: 'value/gravity/sketch-color',
     type: 'value',
     matcher: function(prop) {
       return prop.attributes.category === 'color';
@@ -71,5 +92,24 @@ module.exports = {
       const bFixed = (b / 255.0).toFixed(16);
       return `"red": ${rFixed}, "green": ${gFixed}, "blue": ${bFixed}, "alpha":${a}`;
     }
-  }
+  },
+
+  /**
+   * Transforms a color property's value to an array of the R, G and B values
+   * expressed as floats.
+   */
+  gravityAseColor: {
+    name: 'value/gravity/ase-color',
+    type: 'value',
+    matcher: function(prop) {
+      return prop.attributes.category === 'color';
+    },
+    transformer: function (prop) {
+      const { r, g, b } = Color(prop.value).toRgb();
+      const rFloat = (r / 255.0);
+      const gFloat = (g / 255.0);
+      const bFloat = (b / 255.0);
+      return [rFloat, gFloat, bFloat];
+    }
+  },
 };

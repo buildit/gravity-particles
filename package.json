@@ -44,6 +44,7 @@
   "homepage": "https://github.com/buildit/gravity-particles#readme",
   "license": "MIT",
   "devDependencies": {
+    "ase-utils": "^0.1.1",
     "del": "^4.1.0",
     "gulp": "^4.0.0",
     "gulp-decompress": "^2.0.2",

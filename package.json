@@ -12,6 +12,7 @@
   "scripts": {
     "build": "gulp",
     "clean": "gulp clean",
+    "clean-bin": "gulp clean-bin",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -45,9 +46,13 @@
   "devDependencies": {
     "del": "^4.1.0",
     "gulp": "^4.0.0",
+    "gulp-decompress": "^2.0.2",
+    "gulp-download-files": "0.0.3",
+    "gulp-shell": "^0.7.0",
     "gulp-typescript": "^5.0.1",
     "lodash.camelcase": "^4.3.0",
     "lodash.kebabcase": "^4.1.1",
+    "lodash.startcase": "^4.4.0",
     "nunjucks": "^3.2.0",
     "style-dictionary": "^2.7.0",
     "typescript": "^3.4.3"

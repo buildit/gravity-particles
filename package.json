@@ -12,6 +12,7 @@
   "scripts": {
     "build": "gulp",
     "commit": "git-cz",
+    "semantic-release": "semantic-release",
     "clean": "gulp clean",
     "clean-bin": "gulp clean-bin",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -47,6 +48,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/travis-cli": "^8.0.0",
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/commit-analyzer": "^6.2.0",
     "@semantic-release/git": "^7.0.14",

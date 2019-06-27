@@ -1,4 +1,4 @@
-# Braching strategy
+# Branching strategy
 
 This project currently uses a simple branching strategy that is inspired by [git-flow](http://nvie.com/posts/a-successful-git-branching-model/). _Diet Git Flow_, if you will.
 

@@ -38,7 +38,8 @@
     "url": "https://buildit.wiprodigital.com/"
   },
   "contributors": [
-    "James Nash (http://cirrus.twiddles.com/)"
+    "James Nash (http://cirrus.twiddles.com/)",
+    "Jon Lazarini (https://FiF0o.github.io/)"
   ],
   "bugs": {
     "url": "https://github.com/buildit/gravity-particles/issues"
@@ -70,7 +71,7 @@
     "lodash.startcase": "^4.4.0",
     "nunjucks": "^3.2.0",
     "semantic-release": "^15.13.17",
-    "style-dictionary": "^2.7.0",
+    "style-dictionary": "^2.8.0",
     "typescript": "^3.4.3"
   },
   "engines": {

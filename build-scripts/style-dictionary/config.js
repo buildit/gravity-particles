@@ -41,6 +41,10 @@ module.exports = require('style-dictionary')
     name: 'gravity-macOS',
     transforms: ['attribute/cti', 'name/human', 'color/css']
   })
+  .registerTransformGroup({
+    name: 'ios-swift',
+    transforms: ['attribute/cti', 'name/cti/camel', 'color/UIColorSwift']
+  })
   .registerFormat(sdFormats.colorsScss)
   .registerFormat(sdFormats.colorSchemeScss)
   .registerFormat(sdFormats.colorsTs)
@@ -53,6 +57,18 @@ module.exports = require('style-dictionary')
       bldPaths.srcTokensPath('**', '*.json')
     ],
     platforms: {
+      swift : {
+        transformGroup: 'ios-swift',
+        buildPath: `${bldApi.distPath('swift')}${path.sep}`,
+        files: [
+          {
+            className: 'GravityColors',
+            destination: 'GravityColors.swift',
+            format: 'ios-swift/class.swift'
+          }
+        ]
+      },
+
       // SCSS output
       scss: {
         transformGroup: 'gravity-scss',

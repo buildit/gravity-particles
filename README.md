@@ -43,6 +43,18 @@ Congrats, you're all set!
 
 **TIP:** We recommend using [NVM](https://github.com/creationix/nvm) to ensure you have a compatible Node.js version (>= 8.11.1).
 
+### Commits
+⚠️**Important:** All commits must adhere to the [Coventional Commits format](https://www.conventionalcommits.org/), because we have an [automated release process](https://semantic-release.gitbook.io/semantic-release/) that depends on this.
+
+While you can, in principle, manually format your commit messages using your preferred git client, we recommend using [commitizen](http://commitizen.github.io/cz-cli/), which is installed when you run `npm install`. To run it, simply do:
+
+```sh
+npm run commit
+```
+(Alternatively, you can also run `npx git-cz`, which does the same thing)
+
+Note, we also use a git pre-commit hook (which is setup automatically when you run `npm install`) to lint new commit messages and enforce the correct formatting. Our CI also checks commit messages in a PR.
+
 
 ### Build
 To do a build, which exports the tokens in all the supported formats, run:

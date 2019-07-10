@@ -59,20 +59,20 @@
     "ase-utils": "^0.1.1",
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "^2.1.0",
-    "del": "^4.1.0",
+    "del": "^5.0.0",
     "gulp": "^4.0.0",
     "gulp-decompress": "^2.0.2",
     "gulp-download-files": "0.0.3",
     "gulp-shell": "^0.7.0",
     "gulp-typescript": "^5.0.1",
-    "husky": "^2.4.1",
+    "husky": "^3.0.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.kebabcase": "^4.1.1",
     "lodash.startcase": "^4.4.0",
     "nunjucks": "^3.2.0",
     "semantic-release": "^15.13.17",
     "style-dictionary": "^2.8.0",
-    "typescript": "^3.4.3"
+    "typescript": "^3.5.3"
   },
   "engines": {
     "node": "^8.11.1",

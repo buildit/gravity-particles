@@ -51,7 +51,6 @@ While you can, in principle, manually format your commit messages using your pre
 ```sh
 npm run commit
 ```
-(Alternatively, you can also run `npx git-cz`, which does the same thing)
 
 Note, we also use a git pre-commit hook (which is setup automatically when you run `npm install`) to lint new commit messages and enforce the correct formatting. Our CI also checks commit messages in a PR.
 

@@ -45,6 +45,14 @@ module.exports = require('style-dictionary')
     name: 'ios-swift',
     transforms: ['attribute/cti', 'name/cti/camel', 'color/UIColorSwift']
   })
+  .registerTransformGroup({
+    name: 'ios',
+    transforms: ['attribute/cti', 'name/cti/camel', 'color/UIColor']
+  })
+  .registerTransformGroup({
+    name: 'android',
+    transforms: ['attribute/cti', 'name/cti/camel', 'color/hex']
+  })
   .registerFormat(sdFormats.colorsScss)
   .registerFormat(sdFormats.colorSchemeScss)
   .registerFormat(sdFormats.colorsTs)
@@ -57,7 +65,7 @@ module.exports = require('style-dictionary')
       bldPaths.srcTokensPath('**', '*.json')
     ],
     platforms: {
-      swift : {
+      swift: {
         transformGroup: 'ios-swift',
         buildPath: `${bldApi.distPath('swift')}${path.sep}`,
         files: [
@@ -68,7 +76,33 @@ module.exports = require('style-dictionary')
           }
         ]
       },
-
+      ios: {
+        transformGroup: 'ios',
+        buildPath: `${bldApi.distPath('ios')}${path.sep}`,
+        files: [
+          {
+            className: 'GravityColors',
+            destination: 'GravityColors.h',
+            format: 'ios/colors.h'
+          },
+          {
+            className: 'GravityColors',
+            destination: 'GravityColors.m',
+            format: 'ios/colors.m'
+          },
+        ]
+      },
+      android: {
+        transformGroup: 'android',
+        buildPath: `${bldApi.distPath('android')}${path.sep}`,
+        files: [
+          {
+            className: 'GravityColors',
+            destination: 'GravityColors.xml',
+            format: 'android/colors'
+          }
+        ]
+      },
       // SCSS output
       scss: {
         transformGroup: 'gravity-scss',

@@ -65,6 +65,11 @@ npm run build
 This will create a `dist/` directory containing the exported tokens. (It will also create a `.tmp/` directory for intermediate build files)
 
 
+### Running tests
+```
+npm run test
+```
+
 ### Clean
 To remove any previous build output run:
 

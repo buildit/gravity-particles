@@ -16,7 +16,7 @@
     "semantic-release": "semantic-release",
     "clean": "gulp clean",
     "clean-bin": "gulp clean-bin",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --noStackTrace"
   },
   "repository": {
     "type": "git",
@@ -58,6 +58,7 @@
     "@semantic-release/npm": "^5.3.4",
     "@semantic-release/release-notes-generator": "^7.3.5",
     "ase-utils": "^0.1.1",
+    "color": "^3.1.2",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
     "del": "^5.1.0",
@@ -67,6 +68,7 @@
     "gulp-shell": "^0.7.0",
     "gulp-typescript": "^5.0.1",
     "husky": "^3.1.0",
+    "jest": "^24.9.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.kebabcase": "^4.1.1",
     "lodash.startcase": "^4.4.0",

@@ -2,6 +2,7 @@
 dist/
 .tmp/
 .tmp-bin/
+coverage/
 
 ######### App / OS-specific guff ##########
 

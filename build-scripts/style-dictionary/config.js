@@ -22,10 +22,6 @@ module.exports = require('style-dictionary')
   .registerTransform(sdTransforms.gravitySketchColor)
   .registerTransform(sdTransforms.gravityAseColor)
   .registerTransformGroup({
-    name: 'gravity-scss',
-    transforms: ['attribute/cti', sdTransforms.gravitySassVarName.name, 'color/css']
-  })
-  .registerTransformGroup({
     name: 'gravity-ts',
     transforms: ['attribute/cti', 'name/cti/camel', 'color/css']
   })
@@ -105,7 +101,7 @@ module.exports = require('style-dictionary')
       },
       // SCSS output
       scss: {
-        transformGroup: 'gravity-scss',
+        transformGroup: 'scss',
         buildPath: `${bldApi.distPath('scss')}${path.sep}`,
         files: [
           {

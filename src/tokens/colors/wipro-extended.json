@@ -44,20 +44,33 @@
         "shade-7":    { "value": "#0c0e05" }
       },
       "teal": {
-        "shade-80":   { "value": "#008D7C" },
-        "shade-60" :  { "value": "#006c5e" },
-        "shade-40":   { "value": "#00483f" },
+        "shade-80":   { "value": "#009483" },
+        "shade-60" :  { "value": "#007C6C" },
+        "shade-40":   { "value": "#005C50" },
         "shade-20":   { "value": "#00241f" },
         "shade-7":    { "value": "#000d0b" }
       },
       "gray": {
-        "black":        { "value": "#000000" },
-        "very-dark":    { "value": "#161616" },
-        "darker":       { "value": "#3d3a3a" },
-        "medium-dark":  { "value": "#7d7d7d" },
-        "medium":       { "value": "#969696" },
-        "medium-light": { "value": "#C9C9C9" },
-        "very-light":   { "value": "#f1f1f1" }
+        "black":        { "value": "{color.wipro-extended.gray.000.value}" },
+        "very-dark":    { "value": "{color.wipro-extended.gray.010.value}" },
+        "darker":       { "value": "{color.wipro-extended.gray.025.value}" },
+        "medium-dark":  { "value": "{color.wipro-extended.gray.050.value}" },
+        "medium":       { "value": "{color.wipro-extended.gray.060.value}" },
+        "medium-light": { "value": "{color.wipro-extended.gray.080.value}" },
+        "very-light":   { "value": "{color.wipro-extended.gray.095.value}" },
+
+        "100":          { "value": "#FFFFFF" },
+        "095":          { "value": "#F1F1F1" },
+        "090":          { "value": "#E6E6E6" },
+        "080":          { "value": "#CCCCCC" },
+        "070":          { "value": "#B3B3B3" },
+        "060":          { "value": "#999999" },
+        "050":          { "value": "#7F7F7F" },
+        "040":          { "value": "#666666" },
+        "025":          { "value": "#404040" },
+        "015":          { "value": "#262626" },
+        "010":          { "value": "#1A1A1A" },
+        "000":          { "value": "#000000" }
       }
     }
   }

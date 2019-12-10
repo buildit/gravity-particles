@@ -3,11 +3,11 @@
     "tealDarkGray" : {
       "groupA": {
         "neutral":          {
-          "value":    "{color.wipro.gray.dark.value}",
+          "value":    "{color.wipro-extended.gray.025.value}",
           "comment":  "{colorScheme.tealWhite.groupA.neutral.comment}"
         },
         "neutralAlt":       {
-          "value":    "{color.wipro-extended.gray.darker.value}",
+          "value":    "{color.wipro-extended.gray.025.value}",
           "comment":  "{colorScheme.tealWhite.groupA.neutralAlt.comment}"
         },
         "accent":           {
@@ -33,7 +33,7 @@
           "comment":  "{colorScheme.tealWhite.groupB.neutral.comment}"
         },
         "neutralSubtle":    {
-          "value":    "{color.wipro-extended.gray.medium-light.value}",
+          "value":    "{color.wipro-extended.gray.080.value}",
           "comment":  "{colorScheme.tealWhite.groupB.neutralSubtle.comment}"
         },
         "neutralEmphasis":  {
@@ -45,23 +45,23 @@
           "comment":  "{colorScheme.tealWhite.groupB.control.comment}"
         },
         "controlAlt":       {
-          "value":    "{color.wipro.violet.tint-40.value}",
+          "value":    "{color.wipro.violet.tint-20.value}",
           "comment":  "{colorScheme.tealWhite.groupB.controlAlt.comment}"
         },
         "controlEmphasis":  {
-          "value":    "{color.wipro.teal.base.value}",
+          "value":    "{color.wipro.teal.tint-60.value}",
           "comment":  "{colorScheme.tealWhite.groupB.controlEmphasis.comment}"
         },
         "controlActive":    {
-          "value":    "{color.wipro.teal.tint-80.value}",
+          "value":    "{color.wipro.teal.tint-40.value}",
           "comment":  "{colorScheme.tealWhite.groupB.controlActive.comment}"
         },
         "controlDisabled":  {
-          "value":    "{color.wipro-extended.gray.medium.value}",
+          "value":    "{color.wipro-extended.gray.070.value}",
           "comment":  "{colorScheme.tealWhite.groupB.controlDisabled.comment}"
         },
         "accent":           {
-          "value":    "{color.wipro.teal.base.value}",
+          "value":    "{color.wipro.teal.tint-60.value}",
           "comment":  "{colorScheme.tealWhite.groupB.accent.comment}"
         },
         "accentSuccess":    {
@@ -73,7 +73,7 @@
           "comment":  "{colorScheme.tealWhite.groupB.accentAttention.comment}"
         },
         "accentDanger":     {
-          "value":    "{color.wipro.red.tint-60.value}",
+          "value":    "{color.wipro.red.tint-40.value}",
           "comment":  "{colorScheme.tealWhite.groupB.accentDanger.comment}"
         }
       }

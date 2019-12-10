@@ -59,8 +59,8 @@
       },
       "gray": {
         "dark":   { "value": "#4d4848" },
-        "light":  { "value": "#e6e6e6" },
-        "white":  { "value": "#fff" }
+        "light":  { "value": "{color.wipro-extended.gray.090.value}" },
+        "white":  { "value": "{color.wipro-extended.gray.100.value}" }
       },
       "reserved": {
         "navyBlue":    { "value": "#002d72" },

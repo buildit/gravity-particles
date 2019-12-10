@@ -6,4 +6,5 @@ install:
 script:
   - commitlint-travis
   - npm run build
+  - npm run test
   - npm run semantic-release

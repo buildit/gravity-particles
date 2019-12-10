@@ -1,0 +1,11 @@
+{% macro renderColorProperty(brand, palette, colorName, colorProp) -%}
+  {{colorProp.value | safe }} {{palette | start}}{% if colorName != 'base' %} - {{colorName | start}}{% endif %}
+{%- endmacro -%}
+
+{%- for brand, group in dictionary.properties.color -%}
+  {%- for palette, colors in group -%}
+    {%- for colorName, colorProp in colors %}
+{{ renderColorProperty(brand, palette, colorName, colorProp) | safe }}
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endfor %}

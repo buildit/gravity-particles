@@ -7,12 +7,16 @@
   "files": [
     "build-api.js",
     "build-consts.js",
-    "dist/"
+    "dist/js/",
+    "dist/scss/"
   ],
   "scripts": {
     "build": "gulp",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
     "clean": "gulp clean",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean-bin": "gulp clean-bin",
+    "test": "jest --noStackTrace"
   },
   "repository": {
     "type": "git",
@@ -35,7 +39,8 @@
     "url": "https://buildit.wiprodigital.com/"
   },
   "contributors": [
-    "James Nash (http://cirrus.twiddles.com/)"
+    "James Nash (http://cirrus.twiddles.com/)",
+    "Jon Lazarini (https://FiF0o.github.io/)"
   ],
   "bugs": {
     "url": "https://github.com/buildit/gravity-particles/issues"
@@ -43,14 +48,34 @@
   "homepage": "https://github.com/buildit/gravity-particles#readme",
   "license": "MIT",
   "devDependencies": {
-    "del": "^4.1.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@commitlint/travis-cli": "^8.2.0",
+    "@semantic-release/changelog": "^3.0.6",
+    "@semantic-release/commit-analyzer": "^6.3.3",
+    "@semantic-release/git": "^7.0.18",
+    "@semantic-release/github": "^5.5.5",
+    "@semantic-release/npm": "^5.3.4",
+    "@semantic-release/release-notes-generator": "^7.3.5",
+    "ase-utils": "^0.1.1",
+    "color": "^3.1.2",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "del": "^5.1.0",
     "gulp": "^4.0.0",
+    "gulp-decompress": "^3.0.0",
+    "gulp-download-files": "0.0.3",
+    "gulp-shell": "^0.7.0",
     "gulp-typescript": "^5.0.1",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.kebabcase": "^4.1.1",
+    "lodash.startcase": "^4.4.0",
     "nunjucks": "^3.2.0",
-    "style-dictionary": "^2.7.0",
-    "typescript": "^3.4.3"
+    "semantic-release": "^15.13.31",
+    "style-dictionary": "^2.8.3",
+    "typescript": "^3.7.3"
   },
   "engines": {
     "node": "^8.11.1",
@@ -61,5 +86,15 @@
     "name": "gravity-particles",
     "exports": false,
     "needs": "^1.4.1 || ^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }

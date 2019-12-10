@@ -43,6 +43,17 @@ Congrats, you're all set!
 
 **TIP:** We recommend using [NVM](https://github.com/creationix/nvm) to ensure you have a compatible Node.js version (>= 8.11.1).
 
+### Commits
+⚠️**Important:** All commits must adhere to the [Coventional Commits format](https://www.conventionalcommits.org/), because we have an [automated release process](https://semantic-release.gitbook.io/semantic-release/) that depends on this.
+
+While you can, in principle, manually format your commit messages using your preferred git client, we recommend using [commitizen](http://commitizen.github.io/cz-cli/), which is installed when you run `npm install`. To run it, simply do:
+
+```sh
+npm run commit
+```
+
+Note, we also use a git pre-commit hook (which is setup automatically when you run `npm install`) to lint new commit messages and enforce the correct formatting. Our CI also checks commit messages in a PR.
+
 
 ### Build
 To do a build, which exports the tokens in all the supported formats, run:
@@ -54,12 +65,19 @@ npm run build
 This will create a `dist/` directory containing the exported tokens. (It will also create a `.tmp/` directory for intermediate build files)
 
 
+### Running tests
+```
+npm run test
+```
+
 ### Clean
 To remove any previous build output run:
 
 ```
 npm run clean
 ```
+
+When running on macOS, the build process will download some [additional tools](https://github.com/ramonpoca/ColorTools) on the first build and place them under `.tmp-bin/`. If you wish, you can remove those (e.g. to force a fresh download on the next build) by running: `npm run clean-bin`.
 
 
 ### How it works

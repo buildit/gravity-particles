@@ -4,13 +4,19 @@ const ts = require('gulp-typescript');
 
 const bldApi = require('./build-api');
 const bldPaths = require('./build-scripts/build-paths');
+const macOsClrTasks = require('./build-scripts/macos-clr-tasks');
 const gravityStyleDictionary = require('./build-scripts/style-dictionary/config');
-
 
 function clean() {
   return del([
     bldApi.distPath('**', '*'),
     bldPaths.tmpPath('**', '*')
+  ]);
+}
+
+function cleanBin() {
+  return del([
+    bldPaths.tmpBinPath('**', '*')
   ]);
 }
 
@@ -40,13 +46,19 @@ function compileTs() {
 
 const build = gulp.series(
   styleDictionary,
-  copyTs,
-  compileTs
+  gulp.parallel(
+    macOsClrTasks.convertToClr,
+    gulp.series(
+      copyTs,
+      compileTs,
+    ),
+  ),
 );
 
 
 module.exports = {
   default: build,
 
-  clean
+  clean,
+  'clean-bin': cleanBin
 };

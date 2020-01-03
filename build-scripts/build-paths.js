@@ -54,6 +54,18 @@ module.exports = {
   srcTsPath: (...pathSegments) => srcPath('ts', ...pathSegments),
 
   /**
+   * Takes a sequence of path segments relative to SVG source directory
+   * and returns the absolute path.
+   *
+   * @param  {...string} pathSegements One or more path segments
+   *        relative to the SVG source directory.
+   *
+   * @return {string} Absolute file path to the specified source
+   *        directory or file.
+   */
+  srcSvgPath: (...pathSegments) => srcPath('svg', ...pathSegments),
+
+  /**
    * Takes a sequence of path segments relative to the temporary
    * path for intermediate build output.
    *

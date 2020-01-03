@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1"
+	 id="impossibe-b-faces" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64"
+	 style="enable-background:new 0 0 64 64;">
+<style type="text/css">
+	.grav-svg-hl-1{fill:#FF8080;}
+	.grav-svg-hl-2{fill:#FFAAAA;}
+	.grav-svg-hl-3{fill:#FFD5D5;}
+</style>
+<path id="right" inkscape:connector-curvature="0" class="grav-svg-hl-1" d="M29,21l-4,3V10l4-3V21z M29,33l-4-3
+	v30l24-18v-6L29,51V33z"/>
+<path id="left" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccccc" class="grav-svg-hl-2" d="M21,7
+	v50l4,3V30l12,9l4-3L25,24V10L21,7z"/>
+<path id="top" inkscape:connector-curvature="0" class="grav-svg-hl-3" d="M29,21l-4,3l16,12l-12,9v6l20-15L29,21z M25,4
+	l-4,3l4,3l4-3L25,4z"/>
+</svg>

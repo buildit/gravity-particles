@@ -5,6 +5,7 @@ const ts = require('gulp-typescript');
 const bldApi = require('./build-api');
 const bldPaths = require('./build-scripts/build-paths');
 const macOsClrTasks = require('./build-scripts/macos-clr-tasks');
+const svgTasks = require('./build-scripts/svg-tasks');
 const gravityStyleDictionary = require('./build-scripts/style-dictionary/config');
 
 function clean() {
@@ -52,6 +53,7 @@ const build = gulp.series(
       copyTs,
       compileTs,
     ),
+    svgTasks.cleanAndOptimiseSvgs,
   ),
 );
 

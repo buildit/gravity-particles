@@ -40,11 +40,11 @@ module.exports = {
   // ==== Pre-compiled output: ====
 
   /**
-   * Takes a sequence of path segments relative to the UI library's
+   * Takes a sequence of path segments relative to the
    * distributables directory and returns the absolute path.
    *
    * @param  {...string} pathSegements One or more path segments
-   *        relative to the UI library's distributables directory.
+   *        relative to the distributables directory.
    *
    * @return {string} Absolute file path to the specified
    *        distributable directory or file.
@@ -52,4 +52,39 @@ module.exports = {
    * @public
    */
   distPath,
+
+  /**
+   * Takes a sequence of path segments relative to the Web avatar SVGs
+   * distributables directory and returns the absolute path.
+   *
+   * @param  {...string} pathSegements One or more path segments
+   *        relative to the Web avatar SVGs distributables directory.
+   *
+   * @return {string} Absolute file path to the specified
+   *        distributable directory or file.
+   *
+   * @public
+   */
+  distWebSvgPath: (...pathSegements) => distPath(bldConsts.distWebSvgDirname, ...pathSegements),
+
+  /**
+   * The avatar SVGs sub-directory name.
+   *
+   * @public
+   */
+  svgAvatarDirname: 'avatar',
+
+  /**
+  * The logo SVGs sub-directory name.
+  *
+  * @public
+  */
+ svgLogoDirname: 'logo',
+
+ /**
+   * The UI SVGs sub-directory name.
+   *
+   * @public
+   */
+  svgUiDirname: 'ui',
 };

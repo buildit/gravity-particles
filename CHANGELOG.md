@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/buildit/gravity-particles/compare/v0.4.0...v0.5.0) (2020-01-09)
+
+
+### Features
+
+* adds avatar, logo and UI SVGs ([6cd93e7](https://github.com/buildit/gravity-particles/commit/6cd93e7e6e28cbea7de33d8c77ef9ca29bec80cc))
+
 # [0.4.0](https://github.com/buildit/gravity-particles/compare/v0.3.0...v0.4.0) (2019-12-11)
 
 

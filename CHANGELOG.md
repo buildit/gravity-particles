@@ -1,3 +1,11 @@
+## [0.5.1](https://github.com/buildit/gravity-particles/compare/v0.5.0...v0.5.1) (2020-01-28)
+
+
+### Bug Fixes
+
+* **a11y:** add Cycle 7 and Gravity titles to SVG logos ([690b088](https://github.com/buildit/gravity-particles/commit/690b0881b6a80e3abfec99ea637951b9fa44e1ca))
+* **a11y:** add missing labels to svg logos ([23fc1f4](https://github.com/buildit/gravity-particles/commit/23fc1f40345dcef57608e63cfeb515f42f24d758))
+
 # [0.5.0](https://github.com/buildit/gravity-particles/compare/v0.4.0...v0.5.0) (2020-01-09)
 
 

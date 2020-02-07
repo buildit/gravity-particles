@@ -1,3 +1,14 @@
+# [0.6.0](https://github.com/buildit/gravity-particles/compare/v0.5.1...v0.6.0) (2020-02-07)
+
+
+### Features
+
+* **buildit-logotype.svg:** updated to new buildit logo ([09ba3c9](https://github.com/buildit/gravity-particles/commit/09ba3c9863b7087b9f6f9d9e064b10786baf8b84))
+* **buildit-logotype.svg:** updated to new buildit logo ([9bf0c9b](https://github.com/buildit/gravity-particles/commit/9bf0c9bc0afab084f7d2af1810b55d1aefcc1784))
+* **buildit-logotype.svg:** updated to new buildit logo ([8086bd0](https://github.com/buildit/gravity-particles/commit/8086bd009db0b0f9bb840373cb3d6efdbedc13bd))
+* **buildit-logotype.svg:** updated to new buildit logo ([f33b63f](https://github.com/buildit/gravity-particles/commit/f33b63f0c5b4d5c3e903e1281ef14989952b2f89))
+* **buildit-logotype.svg:** updated to new buildit logo ([e7019c8](https://github.com/buildit/gravity-particles/commit/e7019c808e4bcf9f0779daf6e6ffb44ee637cc89))
+
 ## [0.5.1](https://github.com/buildit/gravity-particles/compare/v0.5.0...v0.5.1) (2020-01-28)
 
 

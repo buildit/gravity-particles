@@ -79,8 +79,8 @@
     "typescript": "^3.7.4"
   },
   "engines": {
-    "node": "^8.11.1",
-    "npm": "^5.8.0"
+    "node": ">= 8.11.1",
+    "npm": ">= 5.8.0"
   },
   "eyeglass": {
     "sassDir": "dist/scss",

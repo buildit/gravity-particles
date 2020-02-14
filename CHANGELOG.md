@@ -1,3 +1,11 @@
+## [0.6.1](https://github.com/buildit/gravity-particles/compare/v0.6.0...v0.6.1) (2020-02-14)
+
+
+### Bug Fixes
+
+* fixes class names on new Buildit logo SVG ([a39ddc6](https://github.com/buildit/gravity-particles/commit/a39ddc6c7689ad4efc42637f213b11886ca91406))
+* **package:** relaxes node and npm compatibility range ([beb0aa8](https://github.com/buildit/gravity-particles/commit/beb0aa8978ba2c70a9aac8996fe0e6d5b29457bf))
+
 # [0.6.0](https://github.com/buildit/gravity-particles/compare/v0.5.1...v0.6.0) (2020-02-07)
 
 

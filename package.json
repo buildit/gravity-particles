@@ -36,10 +36,13 @@
     "system"
   ],
   "author": {
-    "name": "Buildit",
+    "name": "Buildit | Wipro Digital",
     "url": "https://buildit.wiprodigital.com/"
   },
   "contributors": [
+    "Allan Corbett (http://superallan.com/)",
+    "Daniel Bull (http://danbull.uk/)",
+    "Elohina Guevara (https://elohina.dev/)",
     "James Nash (http://cirrus.twiddles.com/)",
     "Jon Lazarini (https://FiF0o.github.io/)"
   ],

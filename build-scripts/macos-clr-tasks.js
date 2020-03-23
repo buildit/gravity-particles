@@ -2,7 +2,7 @@ const fs = require('fs');
 const os = require('os');
 const gulp = require('gulp');
 const download = require('gulp-download-files');
-const decompress = require('gulp-decompress');
+const unzip = require('gulp-unzip');
 const shell = require('gulp-shell');
 
 const bldApi = require('../build-api');
@@ -29,7 +29,7 @@ function downloadMacColorTools() {
       // File does not yet exist, so download it:
       console.log('Downloading macOS color tools...');
       return download('https://github.com/ramonpoca/ColorTools/releases/download/0.3/ColorTools-0.3.zip')
-        .pipe(decompress())
+        .pipe(unzip())
         .pipe((gulp.dest(bldPaths.tmpBinPath(colorToolsDirname))));
     }
     else {
@@ -45,7 +45,9 @@ function downloadMacColorTools() {
   The noisy output of Html2Clr is suppressed for cleaner build logs.
 */
 const runClrTool = shell.task(
-  `cd ${bldPaths.tmpMacOsPath()};${bldPaths.tmpBinPath(colorToolsDirname, clrToolName)} ${bldPaths.macOsColorsTmpTxtFilename} &> /dev/null`
+  `cd ${bldPaths.tmpMacOsPath()};
+  chmod +x ${bldPaths.tmpBinPath(colorToolsDirname, clrToolName)};
+  ${bldPaths.tmpBinPath(colorToolsDirname, clrToolName)} ${bldPaths.macOsColorsTmpTxtFilename} &> /dev/null`
 );
 runClrTool.displayName = 'runClrTool';
 

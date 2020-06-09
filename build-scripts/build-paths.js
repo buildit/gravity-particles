@@ -3,9 +3,12 @@
  */
 
 const path = require('path');
+const kebabcase = require('lodash.kebabcase');
+
 const bldConsts = require('../build-consts');
 
-const macOsColorsTmpTxtFilename = 'gravity-colors.txt';
+const colorGroups = ['wipro', 'wipro-extended', 'buildit'];
+
 
 // Resolves the given path segments relative to the package root
 function pkgPath(...pathSegements) {
@@ -114,8 +117,16 @@ module.exports = {
   tmpBinPath,
 
   /**
+   * Known colour groups.
+   *
+   * These must match the type key used for the
+   * "colors" category of tokens.
+   */
+  colorGroups,
+
+  /**
    * The file name of the intermediate colors text file used to
    * generate macOS .clr files.
    */
-  macOsColorsTmpTxtFilename,
+  distColorFilename: (group, ext) => `colors-${kebabcase(group)}${ext ? `.${ext}` : ''}`,
 };

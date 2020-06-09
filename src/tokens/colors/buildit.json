@@ -1,0 +1,50 @@
+{
+  "color": {
+    "buildit": {
+      "blue": {
+        "base":       { "value": "#0060FF" },
+        "lighter-1" : { "value": "#4382FB" },
+        "lighter-2":  { "value": "#74A2FC" },
+        "lighter-3":  { "value": "#A4C1FD" },
+        "lighter-4":  { "value": "#D2E0FE" }
+      },
+      "red": {
+        "base":       { "value": "#FF3F00" },
+        "lighter-1" : { "value": "#FF663B" },
+        "lighter-2":  { "value": "#FF8D6A" },
+        "lighter-3":  { "value": "#FFB39B" },
+        "lighter-4":  { "value": "#FFD9CD" }
+      },
+      "dark-blue": {
+        "base":       { "value": "#0000C8" },
+        "lighter-1" : { "value": "#3045CC" },
+        "lighter-2":  { "value": "#6575D8" },
+        "lighter-3":  { "value": "#98A5E5" },
+        "lighter-4":  { "value": "#CCD2F2" }
+      },
+      "neon-red": {
+        "base":       { "value": "#FF2552" },
+        "lighter-1" : { "value": "#FF5173" },
+        "lighter-2":  { "value": "#FF7D96" },
+        "lighter-3":  { "value": "#FFA8B9" },
+        "lighter-4":  { "value": "#FFD4DC" }
+      },
+      "navy-blue": {
+        "base":       { "value": "#061434" },
+        "lighter-1" : { "value": "#38445C" },
+        "lighter-2":  { "value": "#697285" },
+        "lighter-3":  { "value": "#9ca2ad" },
+        "lighter-4":  { "value": "#ebecef" }
+      },
+      "pale-blue": {
+        "base":       { "value": "#D8E8FF" },
+        "lighter-1" : { "value": "#E5EFFF" },
+        "lighter-2":  { "value": "#F2F7FF" }
+      },
+      "neutral": {
+        "black":      { "value": "#000000" },
+        "white":      { "value": "#FFFFFF" }
+      }
+    }
+  }
+}

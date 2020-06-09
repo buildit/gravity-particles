@@ -68,6 +68,7 @@
     "del": "^5.1.0",
     "gulp": "^4.0.0",
     "gulp-download-files": "0.0.3",
+    "gulp-nunjucks-render": "^2.2.3",
     "gulp-shell": "^0.8.0",
     "gulp-typescript": "^5.0.1",
     "gulp-unzip": "^1.1.0",

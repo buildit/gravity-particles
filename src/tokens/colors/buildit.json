@@ -2,48 +2,99 @@
   "color": {
     "buildit": {
       "blue": {
-        "base":       { "value": "#0060FF" },
-        "lighter-1" : { "value": "#4382FB" },
-        "lighter-2":  { "value": "#74A2FC" },
-        "lighter-3":  { "value": "#A4C1FD" },
-        "lighter-4":  { "value": "#D2E0FE" }
+        "shade-80": { "value": "#001333" },
+        "shade-60": { "value": "#002666" },
+        "shade-40": { "value": "#003a99" },
+        "shade-20": { "value": "#004dcc" },
+        "base":     { "value": "#0060FF" },
+        "tint-20" : { "value": "#4382FB" },
+        "tint-40":  { "value": "#74A2FC" },
+        "tint-60":  { "value": "#A4C1FD" },
+        "tint-80":  { "value": "#D2E0FE" },
+        "tint-92":  { "value": "#D8E8FF" },
+        "tint-95" : { "value": "#E5EFFF" },
+        "tint-97":  { "value": "#F2F7FF" }
       },
       "red": {
-        "base":       { "value": "#FF3F00" },
-        "lighter-1" : { "value": "#FF663B" },
-        "lighter-2":  { "value": "#FF8D6A" },
-        "lighter-3":  { "value": "#FFB39B" },
-        "lighter-4":  { "value": "#FFD9CD" }
-      },
-      "dark-blue": {
-        "base":       { "value": "#0000C8" },
-        "lighter-1" : { "value": "#3045CC" },
-        "lighter-2":  { "value": "#6575D8" },
-        "lighter-3":  { "value": "#98A5E5" },
-        "lighter-4":  { "value": "#CCD2F2" }
-      },
-      "neon-red": {
-        "base":       { "value": "#FF2552" },
-        "lighter-1" : { "value": "#FF5173" },
-        "lighter-2":  { "value": "#FF7D96" },
-        "lighter-3":  { "value": "#FFA8B9" },
-        "lighter-4":  { "value": "#FFD4DC" }
-      },
-      "navy-blue": {
-        "base":       { "value": "#061434" },
-        "lighter-1" : { "value": "#38445C" },
-        "lighter-2":  { "value": "#697285" },
-        "lighter-3":  { "value": "#9ca2ad" },
-        "lighter-4":  { "value": "#ebecef" }
-      },
-      "pale-blue": {
-        "base":       { "value": "#D8E8FF" },
-        "lighter-1" : { "value": "#E5EFFF" },
-        "lighter-2":  { "value": "#F2F7FF" }
+        "shade-80": { "value": "#330d00" },
+        "shade-60": { "value": "#661900" },
+        "shade-40": { "value": "#992600" },
+        "shade-20": { "value": "#cc3200" },
+        "base":     { "value": "#FF3F00" },
+        "tint-20" : { "value": "#FF663B" },
+        "tint-40":  { "value": "#FF8D6A" },
+        "tint-60":  { "value": "#FFB39B" },
+        "tint-80":  { "value": "#FFD9CD" }
       },
       "neutral": {
-        "black":      { "value": "#000000" },
-        "white":      { "value": "#FFFFFF" }
+        "black":    { "value": "#000000" },
+        "shade-80": { "value": "#061434" },
+        "shade-60": { "value": "#253146" },
+        "shade-40": { "value": "#38445C" },
+        "shade-20": { "value": "#4e5a73" },
+        "base":     { "value": "#697184" },
+        "tint-20" : { "value": "#878e9d" },
+        "tint-40":  { "value": "#a5aab6" },
+        "tint-60":  { "value": "#c3c7ce" },
+        "tint-80":  { "value": "#ebecef" },
+        "white":    { "value": "#FFFFFF" }
+      },
+
+
+      "deep-blue": {
+        "shade-80": { "value": "#000028" },
+        "shade-60": { "value": "#000050" },
+        "shade-40": { "value": "#000078" },
+        "shade-20": { "value": "#0000a0" },
+        "base":     { "value": "#0000C8" },
+        "tint-20" : { "value": "#3045CC" },
+        "tint-40":  { "value": "#6575D8" },
+        "tint-60":  { "value": "#98A5E5" },
+        "tint-80":  { "value": "#CCD2F2" }
+      },
+      "purple": {
+        "shade-80": { "value": "#20002c" },
+        "shade-60": { "value": "#400058" },
+        "shade-40": { "value": "#610083" },
+        "shade-20": { "value": "#8100af" },
+        "base":     { "value": "#a100db" },
+        "tint-20" : { "value": "#b433e2" },
+        "tint-40":  { "value": "#c766e9" },
+        "tint-60":  { "value": "#d999f1" },
+        "tint-80":  { "value": "#ecccf8" }
+      },
+      "neon-red": {
+        "shade-80": { "value": "#330710" },
+        "shade-60": { "value": "#660f21" },
+        "shade-40": { "value": "#991631" },
+        "shade-20": { "value": "#cc1e42" },
+        "base":     { "value": "#FF2552" },
+        "tint-20" : { "value": "#FF5173" },
+        "tint-40":  { "value": "#FF7D96" },
+        "tint-60":  { "value": "#FFA8B9" },
+        "tint-80":  { "value": "#FFD4DC" }
+      },
+      "warm-yellow": {
+        "shade-80": { "value": "#332105" },
+        "shade-60": { "value": "#66430a" },
+        "shade-40": { "value": "#99640f" },
+        "shade-20": { "value": "#cc8614" },
+        "base":     { "value": "#ffa719" },
+        "tint-20" : { "value": "#ffb947" },
+        "tint-40":  { "value": "#ffca75" },
+        "tint-60":  { "value": "#ffdca3" },
+        "tint-80":  { "value": "#ffedd1" }
+      },
+      "teal-green": {
+        "shade-80": { "value": "#002815" },
+        "shade-60": { "value": "#00502a" },
+        "shade-40": { "value": "#007740" },
+        "shade-20": { "value": "#009f55" },
+        "base":     { "value": "#00c76a" },
+        "tint-20" : { "value": "#33d288" },
+        "tint-40":  { "value": "#66dda6" },
+        "tint-60":  { "value": "#99e9c3" },
+        "tint-80":  { "value": "#ccf4e1" }
       }
     }
   }

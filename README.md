@@ -1,4 +1,6 @@
 # Buildit Gravity Particles
+![Gravity Particles banner](./gravity-particles-banner.png)
+
 This is the "single source of truth" for design tokens and assets used throughout Buildit's Gravity design system.
 
 

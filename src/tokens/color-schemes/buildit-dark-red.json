@@ -1,0 +1,82 @@
+{
+  "colorScheme": {
+    "builditDarkRed" : {
+      "groupA": {
+        "neutral":          {
+          "value":    "{color.buildit.neutral.shade-80.value}",
+          "comment":  "{colorScheme.tealWhite.groupA.neutral.comment}"
+        },
+        "neutralAlt":       {
+          "value":    "{color.buildit.neutral.black.value}",
+          "comment":  "{colorScheme.tealWhite.groupA.neutralAlt.comment}"
+        },
+        "accent":           {
+          "value":    "{color.buildit.neutral.shade-80.value}",
+          "comment":  "{colorScheme.tealWhite.groupA.accent.comment}"
+        },
+        "accentSuccess":    {
+          "value":    "{color.buildit.neutral.shade-80.value}",
+          "comment":  "{colorScheme.tealWhite.groupA.accentSuccess.comment}"
+        },
+        "accentAttention":  {
+          "value":    "{color.buildit.neutral.shade-80.value}",
+          "comment":  "{colorScheme.tealWhite.groupA.accentAttention.comment}"
+        },
+        "accentDanger":     {
+          "value":    "{color.buildit.neutral.shade-80.value}",
+          "comment":  "{colorScheme.tealWhite.groupA.accentDanger.comment}"
+        }
+      },
+      "groupB": {
+        "neutral":          {
+          "value":    "{color.buildit.neutral.white.value}",
+          "comment":  "{colorScheme.tealWhite.groupB.neutral.comment}"
+        },
+        "neutralSubtle":    {
+          "value":    "{color.buildit.neutral.tint-80.value}",
+          "comment":  "{colorScheme.tealWhite.groupB.neutralSubtle.comment}"
+        },
+        "neutralEmphasis":  {
+          "value":    "{color.buildit.neutral.white.value}",
+          "comment":  "{colorScheme.tealWhite.groupB.neutralEmphasis.comment}"
+        },
+        "control":          {
+          "value":    "{color.buildit.neutral.white.value}",
+          "comment":  "{colorScheme.tealWhite.groupB.control.comment}"
+        },
+        "controlAlt":       {
+          "value":    "{color.buildit.purple.tint-40.value}",
+          "comment":  "{colorScheme.tealWhite.groupB.controlAlt.comment}"
+        },
+        "controlEmphasis":  {
+          "value":    "{color.buildit.red.base.value}",
+          "comment":  "{colorScheme.tealWhite.groupB.controlEmphasis.comment}"
+        },
+        "controlActive":    {
+          "value":    "{color.buildit.red.tint-20.value}",
+          "comment":  "{colorScheme.tealWhite.groupB.controlActive.comment}"
+        },
+        "controlDisabled":  {
+          "value":    "{color.buildit.neutral.tint-20.value}",
+          "comment":  "{colorScheme.tealWhite.groupB.controlDisabled.comment}"
+        },
+        "accent":           {
+          "value":    "{color.buildit.red.base.value}",
+          "comment":  "{colorScheme.tealWhite.groupB.accent.comment}"
+        },
+        "accentSuccess":    {
+          "value":    "{color.buildit.teal-green.base.value}",
+          "comment":  "{colorScheme.tealWhite.groupB.accentSuccess.comment}"
+        },
+        "accentAttention":  {
+          "value":    "{color.buildit.warm-yellow.base.value}",
+          "comment":  "{colorScheme.tealWhite.groupB.accentAttention.comment}"
+        },
+        "accentDanger":     {
+          "value":    "{color.buildit.neon-red.tint-20.value}",
+          "comment":  "{colorScheme.tealWhite.groupB.accentDanger.comment}"
+        }
+      }
+    }
+  }
+}

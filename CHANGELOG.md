@@ -1,3 +1,17 @@
+# [1.0.0](https://github.com/buildit/gravity-particles/compare/v0.6.1...v1.0.0) (2020-08-04)
+
+
+### Features
+
+* adds buildit white and dark color schemes ([2241c8b](https://github.com/buildit/gravity-particles/commit/2241c8b32f732f2752015eb80f9508ceb9cb423c))
+* **colors:** adds buildit 2.0 colors and splits output files ([ee73e0f](https://github.com/buildit/gravity-particles/commit/ee73e0ff636fc6753f021afeb2927fa3af713580))
+* **svg:** adds buildit stacked and b avatar SVGs ([8108b31](https://github.com/buildit/gravity-particles/commit/8108b31abace3ebcb4a2f59dd110bfbb1761afce))
+
+
+### BREAKING CHANGES
+
+* **colors:** Names of color files have changed. Top-level SASS map names have changed too.
+
 ## [0.6.1](https://github.com/buildit/gravity-particles/compare/v0.6.0...v0.6.1) (2020-02-14)
 
 

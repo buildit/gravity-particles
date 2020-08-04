@@ -1,6 +1,6 @@
 {
   "name": "@buildit/gravity-particles",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Design token data and common assets used by other Gravity libraries and tools.",
   "main": "dist/js/index.js",
   "types": "dist/js/index.d.ts",

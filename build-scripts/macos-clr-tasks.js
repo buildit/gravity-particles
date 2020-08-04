@@ -44,12 +44,20 @@ function downloadMacColorTools() {
 
   The noisy output of Html2Clr is suppressed for cleaner build logs.
 */
-const runClrTool = shell.task(
-  `cd ${bldPaths.tmpMacOsPath()};
-  chmod +x ${bldPaths.tmpBinPath(colorToolsDirname, clrToolName)};
-  ${bldPaths.tmpBinPath(colorToolsDirname, clrToolName)} ${bldPaths.macOsColorsTmpTxtFilename} &> /dev/null`
+function makeRunClrToolTask(colorGroup) {
+  const task = shell.task(
+    `mkdir -p ${bldPaths.tmpMacOsPath()};
+    cd ${bldPaths.tmpMacOsPath()};
+    chmod +x ${bldPaths.tmpBinPath(colorToolsDirname, clrToolName)};
+    ${bldPaths.tmpBinPath(colorToolsDirname, clrToolName)} ${bldPaths.distColorFilename(colorGroup, 'txt')} &> /dev/null`
+  );
+  task.displayName = 'runClrTool';
+  return task;
+}
+
+const runClrTool = gulp.parallel(
+  ...bldPaths.colorGroups.map(group => makeRunClrToolTask(group))
 );
-runClrTool.displayName = 'runClrTool';
 
 /*
   Copies the generated .clr file from the tmp directory to the final build output

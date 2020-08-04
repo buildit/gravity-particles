@@ -1,12 +1,15 @@
 const gulp = require('gulp');
 const del = require('del');
-const ts = require('gulp-typescript');
 
 const bldApi = require('./build-api');
 const bldPaths = require('./build-scripts/build-paths');
+
 const macOsClrTasks = require('./build-scripts/macos-clr-tasks');
 const svgTasks = require('./build-scripts/svg-tasks');
+const tsTasks = require('./build-scripts/ts-tasks');
+
 const gravityStyleDictionary = require('./build-scripts/style-dictionary/config');
+
 
 function clean() {
   return del([
@@ -27,32 +30,12 @@ function styleDictionary(done) {
   done();
 }
 
-function copyTs() {
-  return gulp.src(bldPaths.srcTsPath('**','*.ts'))
-    .pipe(gulp.dest(bldPaths.tmpTsPath()));
-}
-
-function compileTs() {
-  return gulp.src(bldPaths.tmpTsPath('**', '*.ts'))
-    .pipe(ts({
-      declaration: true,
-      module: 'CommonJS',
-      strict: true,
-      target: 'ES6',
-    }))
-    .pipe(gulp.dest(bldApi.distPath('js')));
-}
-
-
 
 const build = gulp.series(
   styleDictionary,
   gulp.parallel(
     macOsClrTasks.convertToClr,
-    gulp.series(
-      copyTs,
-      compileTs,
-    ),
+    tsTasks.processTs,
     svgTasks.cleanAndOptimiseSvgs,
   ),
 );

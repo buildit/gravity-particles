@@ -1,0 +1,11 @@
+{%- for importName, baseFileName in colorGroups %}
+import { {{importName}} } from './{{baseFileName}}';
+{%- endfor %}
+
+export const colors = {
+{%- for importName, baseFileName in colorGroups %}
+  {{importName}},
+{%- endfor %}
+};
+
+export * from './color-schemes';

@@ -14,14 +14,36 @@ const aseFormat = require('./format-ase');
  * Configure StyleDictionary with ALL THE THINGS and
  * export it.
  */
-module.exports = require('style-dictionary')
-  .registerFilter(sdFilters.isColor)
-  .registerFilter(sdFilters.isColorScheme)
-  .registerTransform(sdTransforms.gravitySassVarName)
+let customisedStyleDictionary = require('style-dictionary');
+
+/*
+  Create { groupName: filterFn, ... } map for
+  all known color groups.
+*/
+const colorGroupFilters = bldPaths.colorGroups.reduce(
+  (acc, group) => {
+    acc[group] = sdFilters.isColorFromGroup(group);
+    return acc;
+  },
+  {}
+);
+
+// Register filters
+customisedStyleDictionary = customisedStyleDictionary.registerFilter(sdFilters.isColor)
+  .registerFilter(sdFilters.isColorScheme);
+
+bldPaths.colorGroups.forEach(group => {
+  customisedStyleDictionary = customisedStyleDictionary.registerFilter(colorGroupFilters[group]);
+});
+
+// Register transforms
+customisedStyleDictionary = customisedStyleDictionary.registerTransform(sdTransforms.gravitySassVarName)
   .registerTransform(sdTransforms.gravityHumanColorName)
   .registerTransform(sdTransforms.gravitySketchColor)
-  .registerTransform(sdTransforms.gravityAseColor)
-  .registerTransformGroup({
+  .registerTransform(sdTransforms.gravityAseColor);
+
+// Register transform groups
+customisedStyleDictionary = customisedStyleDictionary.registerTransformGroup({
     name: 'gravity-ts',
     transforms: ['attribute/cti', 'name/cti/camel', 'color/css']
   })
@@ -48,19 +70,24 @@ module.exports = require('style-dictionary')
   .registerTransformGroup({
     name: 'android',
     transforms: ['attribute/cti', 'name/cti/camel', 'color/hex']
-  })
-  .registerFormat(sdFormats.colorsScss)
+  });
+
+// Register formats
+customisedStyleDictionary = customisedStyleDictionary.registerFormat(sdFormats.colorsScss)
   .registerFormat(sdFormats.colorSchemeScss)
   .registerFormat(sdFormats.colorsTs)
   .registerFormat(sdFormats.colorSchemeTs)
   .registerFormat(sdFormats.colorSchemeSketch)
   .registerFormat(sdFormats.colorSchemeMacOS)
-  .registerFormat(aseFormat)
-  .extend({
+  .registerFormat(aseFormat);
+
+// Configure
+customisedStyleDictionary = customisedStyleDictionary.extend({
     source: [
       bldPaths.srcTokensPath('**', '*.json')
     ],
     platforms: {
+      // EXPERIMENTAL Swift ouptut
       swift: {
         transformGroup: 'ios-swift',
         buildPath: `${bldApi.distPath('swift')}${path.sep}`,
@@ -72,6 +99,8 @@ module.exports = require('style-dictionary')
           }
         ]
       },
+
+      // EXPERIMENTAL iOS Objective-C ouptut
       ios: {
         transformGroup: 'ios',
         buildPath: `${bldApi.distPath('ios')}${path.sep}`,
@@ -88,6 +117,8 @@ module.exports = require('style-dictionary')
           },
         ]
       },
+
+      // EXPERIMENTAL Android ouptut
       android: {
         transformGroup: 'android',
         buildPath: `${bldApi.distPath('android')}${path.sep}`,
@@ -99,21 +130,24 @@ module.exports = require('style-dictionary')
           }
         ]
       },
+
       // SCSS output
       scss: {
         transformGroup: 'scss',
         buildPath: `${bldApi.distPath('scss')}${path.sep}`,
         files: [
           {
-            filter: 'isColor',
-            destination: 'colors.scss',
-            format: sdFormats.colorsScss.name
-          },
-          {
             filter: 'isColorScheme',
             destination: 'color-schemes.scss',
             format: sdFormats.colorSchemeScss.name
-          }
+          },
+
+          // per-color-group files
+          ...bldPaths.colorGroups.map(group => ({
+            filter: colorGroupFilters[group].name,
+            destination: bldPaths.distColorFilename(group, 'scss'),
+            format: sdFormats.colorsScss.name
+          })),
         ]
       },
 
@@ -123,15 +157,17 @@ module.exports = require('style-dictionary')
         buildPath: `${bldPaths.tmpTsPath()}${path.sep}`,
         files: [
           {
-            filter: 'isColor',
-            destination: 'colors.ts',
-            format: sdFormats.colorsTs.name
-          },
-          {
             filter: 'isColorScheme',
             destination: 'color-schemes.ts',
             format: sdFormats.colorSchemeTs.name
-          }
+          },
+
+          // per-color-group files
+          ...bldPaths.colorGroups.map(group => ({
+            filter: colorGroupFilters[group].name,
+            destination: bldPaths.distColorFilename(group, 'ts'),
+            format: sdFormats.colorsTs.name
+          })),
         ]
       },
 
@@ -140,11 +176,12 @@ module.exports = require('style-dictionary')
         transformGroup: 'gravity-sketch',
         buildPath: `${bldApi.distPath('sketch')}${path.sep}`,
         files: [
-          {
-            filter: 'isColor',
-            destination: 'gravity.sketchpalette',
+          // per-color-group files
+          ...bldPaths.colorGroups.map(group => ({
+            filter: colorGroupFilters[group].name,
+            destination: bldPaths.distColorFilename(group, 'sketchpalette'),
             format: sdFormats.colorSchemeSketch.name
-          }
+          })),
         ]
       },
 
@@ -153,11 +190,12 @@ module.exports = require('style-dictionary')
         transformGroup: 'gravity-macOS',
         buildPath: `${bldPaths.tmpMacOsPath()}${path.sep}`,
         files: [
-          {
-            filter: 'isColor',
-            destination: bldPaths.macOsColorsTmpTxtFilename,
+          // per-color-group files
+          ...bldPaths.colorGroups.map(group => ({
+            filter: colorGroupFilters[group].name,
+            destination: bldPaths.distColorFilename(group, 'txt'),
             format: sdFormats.colorSchemeMacOS.name
-          }
+          })),
         ]
       },
 
@@ -166,12 +204,15 @@ module.exports = require('style-dictionary')
         transformGroup: 'gravity-ase',
         buildPath: `${bldApi.distPath('ase')}${path.sep}`,
         files: [
-          {
-            filter: 'isColor',
-            destination: 'gravity.ase',
+          // per-color-group files
+          ...bldPaths.colorGroups.map(group => ({
+            filter: colorGroupFilters[group].name,
+            destination: bldPaths.distColorFilename(group, 'ase'),
             format: aseFormat.name
-          }
+          })),
         ]
       },
     },
   });
+
+  module.exports = customisedStyleDictionary;

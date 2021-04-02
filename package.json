@@ -52,7 +52,7 @@
   "homepage": "https://github.com/buildit/gravity-particles#readme",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "^9.0.1",
+    "@commitlint/cli": "^12.1.0",
     "@commitlint/config-conventional": "^9.1.1",
     "@commitlint/travis-cli": "^9.0.1",
     "@semantic-release/changelog": "^5.0.0",
